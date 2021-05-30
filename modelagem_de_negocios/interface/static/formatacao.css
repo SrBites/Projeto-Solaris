@@ -9,6 +9,11 @@
   margin-top: 15px;
 }
 
+.caixa3 {
+  margin-right: auto;
+  margin-left: auto;
+}
+
 #titulo {
   margin-top: 50px;
 }
@@ -102,6 +107,11 @@ article.row div {
   justify-content: center;
   padding-top: 15px;
   padding-bottom: 40px;
+}
+
+#formulario {
+  justify-content: center;
+  margin: 15px 0;
 }
 
 .form-login, .form-signin {
