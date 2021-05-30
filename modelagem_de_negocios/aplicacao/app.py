@@ -7,7 +7,7 @@ import math
 def index():
     # um template generico apenas para testar o funcionamento do calculo
     # templates/numeros.html
-    return render_template('gerarProposta.html')
+    return render_template('algoritmo.html')
 
 
 # OPERACOES.HTML
@@ -83,7 +83,7 @@ def nome():
     m10 = int(request.form['m10'])
     m11 = int(request.form['m11'])
     m12 = int(request.form['m12'])
-    sis = str(request.form['tiposis'])
+    sis = request.form['tiposis']
 
     # como não existe conta cliente, não é possivel acessar os dados como o cep, por isso utilizei o request
     # porém,originalmente ele virá do banco de dados da conta cliente
@@ -93,11 +93,11 @@ def nome():
     solar = float(0.0)
     recuo = 0
 
-    if sis == 'mono':
+    if sis == 'Monofásico':
         recuo = 30
-    elif sis == 'bi':
+    elif sis == 'Bifásico':
         recuo = 50
-    elif sis == 'tri':
+    elif sis == 'Trifásico':
         recuo = 100
 
     # identificando o indice pelo cep(sem o '-' para facilitar no teste do calculo)
