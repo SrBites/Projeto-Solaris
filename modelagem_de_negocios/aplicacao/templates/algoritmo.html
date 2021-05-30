@@ -1,0 +1,189 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/modelagem_de_negocios/interface/static/formatacao.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorítmo</title>
+    <script>
+        function onlyNumberKey(evt) {
+         var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+         if (ASCIICode > 31 && (ASCIICode < 46 || ASCIICode > 57))
+             return false;
+         return true;
+     }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="jumbotron jumbotron-fluid" id="titulo">
+            <h1 class="text-center">SOLARITS</h1>
+        </div>
+        <div class="caixa">
+            <nav class="navbar navbar-expand-sm" id="navegacao">
+                <div class="collapse navbar-collapse">
+                    <div class="navbar-nav" id="links">
+                        <a class="nav-link text-warning" id="nav-item" href="#">Início</a>
+                        <a class="nav-link text-warning" id="nav-item" href="#">Vídeos</a>
+                        <a class="nav-link text-warning" id="nav-item" href="#">Ajuda</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+    </header>
+    <main>
+        <form action="/proposta" method="post">
+        <div class="container">
+            <div class="jumbotron jumbotron-fluid mb-5" id="titulo">
+                <h1 class="display-4 text-center">Formulário</h1>
+            </div>
+        </div>
+        <div class="row" id="formulario">
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="mes">Mês 1</label>
+                    <input id="mes" type="number" onkeypress="return onlyNumberKey(event)" name="m1" class="form-control" required="required" data-error="Campo obrigatório">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="mes">Mês 2</label>
+                    <input id="mes" type="number" onkeypress="return onlyNumberKey(event)" name="m2" class="form-control" required="required" data-error="Campo obrigatório">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="mes">Mês 3</label>
+                    <input id="mes" type="number" onkeypress="return onlyNumberKey(event)" name="m3" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row" id="formulario">
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="mes">Mês 4</label>
+                    <input id="mes" type="number" onkeypress="return onlyNumberKey(event)" name="m4" class="form-control" required="required" data-error="Campo obrigatório">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="mes">Mês 5</label>
+                    <input id="mes" type="number" onkeypress="return onlyNumberKey(event)" name="m5" class="form-control" required="required" data-error="Campo obrigatório">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="mes">Mês 6</label>
+                    <input id="mes" type="number" onkeypress="return onlyNumberKey(event)" name="m6" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row" id="formulario">
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="mes">Mês 7</label>
+                    <input id="mes" type="number" onkeypress="return onlyNumberKey(event)" name="m7" class="form-control" required="required" data-error="Campo obrigatório">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="mes">Mês 8</label>
+                    <input id="mes" type="number" onkeypress="return onlyNumberKey(event)" name="m8" class="form-control" required="required" data-error="Campo obrigatório">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="mes">Mês 9</label>
+                    <input id="mes" type="number" onkeypress="return onlyNumberKey(event)" name="m9" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row" id="formulario">
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="mes">Mês 10</label>
+                    <input id="mes" type="number" onkeypress="return onlyNumberKey(event)" name="m10" class="form-control" required="required" data-error="Campo obrigatório">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="mes">Mês 11</label>
+                    <input id="mes" type="number" onkeypress="return onlyNumberKey(event)" name="m11" class="form-control" required="required" data-error="Campo obrigatório">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="mes">Mês 12</label>
+                    <input id="mes" type="number" onkeypress="return onlyNumberKey(event)" name="m12" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="caixa mb-1 mt-5">
+        <label for="sistEletrico">Tipo de sistema elétrico</label>
+        </div>
+        <div class="caixa">
+            <select name="tiposis" class="form-select w-auto" id="sistEletrico" required>
+                <option>Monofásico</option>
+                <option>Bifásico</option>
+                <option>Trifásico</option>
+            </select>
+        </div>
+        <div class="caixa mb-1 mt-5">
+            <label for="sistEletrico">CEP</label>
+            
+            </div>
+        <div class="caixa w-auto">
+            <input type="number" onkeypress="return onlyNumberKey(event)" class="form-control">
+        </div>
+        <div class="caixa mb-5 mt-5">
+        <button type="submit" class="btn btn-warning text-white">Gerar proposta</button>
+        </div>
+        </form>
+    </main>
+    <footer class="bg-warning text-white text-center text-lg-start">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Footer Content</h5>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+                        molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+                        voluptatem veniam, est atque cumque eum delectus sint!
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="https://github.com/Robis123/Projeto-Solaris" target="_blank"
+                                class="text-white text-decoration-none">Github</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-0">Links</h5>
+
+                    <ul class="list-unstyled mb-0 mt-2">
+                        <li>
+                            <a href="#!" class="text-white text-decoration-none">Quem somos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright: Solarits
+        </div>
+    </footer>
+</body>
+
+</html>
