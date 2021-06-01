@@ -151,6 +151,7 @@ article.row div {
 #footer {
   position: absolute;
   bottom: 0;
+
 }
 
 @media (max-width: 600px) {
