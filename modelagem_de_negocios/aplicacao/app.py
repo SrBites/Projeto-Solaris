@@ -7,7 +7,7 @@ import math
 def index():
     # um template generico apenas para testar o funcionamento do calculo
     # templates/numeros.html
-    return render_template('gerarProposta.html')
+    return render_template('algoritmo.html')
 
 
 # OPERACOES.HTML
