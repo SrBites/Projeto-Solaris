@@ -68,11 +68,11 @@
     </div>
     <div class="cliente">
     <div class="text-center" id="caixasignincliente">
-    <form action="/cadastrarCliente" method="post" class="form-signin" id="cadastrocliente">
+    <form action="/cadastracliente" method="post" class="form-signin" id="cadastrocliente">
         <label for="inputUser" class="sr-only" id="inpute">Usuário*</label>
-        <input type="user" name="username" id="inputc" class="form-control" placeholder="Nome de Usuário" required autofocus>
+        <input type="text" name="username" id="inputc" class="form-control" placeholder="Nome de Usuário" required autofocus>
         <label for="inputCep" class="sr-only" id="inputp">CEP*</label>
-        <input type="cep" name="cep" id="inputc" class="form-control" placeholder="Ex: XXXXXXXX" required autofocus>
+        <input type="number" name="cep" maxlength="8" id="inputc" class="form-control" placeholder="Ex: XXXXXXXX" required autofocus>
         <label for="inputPassword" class="sr-only" id="inputp">Senha*</label>
         <input type="password" name="senha" id="inputp" class="form-control" placeholder="Senha" required>
         <button class="btn btn-lg btn-warning text-white" type="submit" id="entrar">Cadastrar</button>
@@ -83,10 +83,10 @@
     <div class="empresa">
     <div class="text-center" id="caixasigninempresa">
       <form class="form-signin" id="cadastroempresa">
-          <label for="inputUser" class="sr-only" id="inputc">Nome da Empresa*</label>
-          <input type="user" id="inpute" class="form-control" placeholder="Nome da empresa" required autofocus>
+          <label for="inputUser" class="sr-only" id="inputc" >Nome da Empresa*</label>
+          <input type="text" name="nome_empresa" id="inpute" class="form-control" placeholder="Nome da empresa" required autofocus>
           <label for="inputCnpj" class="sr-only" id="inputp">CNPJ*</label>
-          <input type="cnpj" class="form-control" maxlength="14" required>
+          <input type="text" name="cnpj" class="form-control" maxlength="14" required>
           <label for="escolheRegiao" class="sr-only" id="inputp">Região de Atuação*</label>
           <select name="atuacao" class="form-control" id="escolheRegiao" required>
             <option value="Escolha o estado" selected></option>
@@ -118,16 +118,16 @@
             <option>TO</option>>
           </select>
           <label for="inputPassword" class="sr-only" id="inputp">Senha*</label>
-          <input type="password" id="inputp" class="form-control" placeholder="Senha" required>
+          <input type="password" name="senha" id="inputp" class="form-control" placeholder="Senha" required>
           <label for="inputLink" class="sr-only" id="inputc">Link da Empresa</label>
-          <input type="user" id="inpute" class="form-control" placeholder="https://example.com" autofocus>   
+          <input type="text" name="link" id="inpute" class="form-control" placeholder="https://example.com" autofocus>
           <button class="btn btn-lg btn-warning text-white" type="submit" id="entrar">Cadastrar</button>
           <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
         </form>
       </div>
       </div>
 </main>
-<footer class="bg-warning text-white text-center text-lg-start" id="footer">
+<footer class="bg-warning text-white text-center text-lg-start static-bottom" id="footer">
     <div class="container p-4" >
       <div class="row">
         <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
