@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/formatacao.css">
+    <link rel="stylesheet" href="/modelagem_de_negocios/aplicacao/static/formatacao.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
@@ -29,47 +29,17 @@
         </nav>
         </div>
         <div class="caixa2" >
-            <a href="login.html"><button type="button" class="btn btn-warning" id="logcad">Login</button></a>
-            <a href="/cadastro"><button type="button" class="btn btn-warning" id="logcad">Cadastro</button></a>
+            <a href="login.html"><button type="button" class="btn btn-warning" id="logcad">Nova proposta</button></a>
         </div>
 
     </header>
     <main>
-        <div id="caixa1">
-            <h1>Section Heading</h1>
-
-            <article class="row" id="textoimagem">
-                <div><img src="https://i.pinimg.com/564x/ff/d4/c5/ffd4c599567899372acea94c2f1937d5.jpg" /></div>
-                <div>
-                    <h3>Idea 1</h3>
-                    <p>Here's your descriptive text for your idea to sell people on the thing after the image gets their
-                        attention. This type of section looks best when there's enough text to take up most of the
-                        height of the adjacent image.</p>
-                    <a href="#">Link to read more</a>
-                </div>
-            </article>
-
-            <article class="row" id="textoimagem">
-                <div>
-                    <h3>Idea 2</h3>
-                    <p>Alternating images and text works with the natural flow of your user's eyes as they scan the
-                        page, allowing their eyes to catch on each of the images in turn. If the user's eyes catch on an
-                        image, they'll likely read the accompanying text.</p>
-                    <a href="#">Link to read more</a>
-                </div>
-                <div><img src="http://placekitten.com/g/310/200" /></div>
-            </article>
-
-            <article class="row" id="textoimagem">
-                <div><img src="http://placekitten.com/g/250/200" /></div>
-                <div>
-                    <h3>Idea 3</h3>
-                    <p>Be careful not to let your text sections become too wordy, however; if you write too much your
-                        users may choose not to read the content.</p>
-                    <a href="#">Link to read more</a>
-                </div>
-            </article>
-
+        <div class="container">
+           <div class="border border-warning rounded">
+            <div class="jumbotron jumbotron-fluid" id="titulo">
+               {{rep | safe}}
+           </div>
+           </div>
         </div>
     </main>
         <footer class="bg-warning text-white text-center text-lg-start">
