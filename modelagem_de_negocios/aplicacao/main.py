@@ -1,9 +1,8 @@
-import os
-from flask import render_template
+from flask import Flask, render_template
 from modelagem_de_negocios.util import pathing
 
 rota = pathing.Path()
-app = rota.daWay()
+app = Flask(__name__, template_folder=rota.templateWay(), static_folder=rota.staticWay())
 
 @app.route('/')
 def index():
