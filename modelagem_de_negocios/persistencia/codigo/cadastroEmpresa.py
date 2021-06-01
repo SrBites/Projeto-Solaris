@@ -6,7 +6,7 @@ rota = pathing.Path()
 app = Flask(__name__, template_folder=rota.templateWay(), static_folder=rota.staticWay())
 
 @app.route('/cadastraempresa', methods='POST')
-def cadastraCliente():
+def cadastraEmpresa():
     nome_empresa = request.form['nome_empresa']
     cnpj = request.form['cnpj']
     atuacao = request.form['atuacao']
@@ -15,7 +15,7 @@ def cadastraCliente():
 
     mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
 
-    cmd = 'INSERT INTO conta_cliente VALUES (%s, %s, PASSWORD(%s));'
+    cmd = 'INSERT INTO conta_cliente VALUES (%s, %s, %s, %s, PASSWORD(%s));'
     mysql.executar(cmd, [nome_empresa, cnpj, atuacao, link_empresa, password])
 
     return render_template('teste.html', msg=msg)
