@@ -22,6 +22,7 @@ def nome():
     amazonas-4,36
     bahia-5,19
     ceara-5,67
+    distrito federal-5,39
     espirito santo-5,53
     goias-5,27
     maranhao-5,10
@@ -42,7 +43,6 @@ def nome():
     sao paulo-4,45
     sergipe-5,27
     tocantins-5,22
-    DF-5,39
 
     dias em um mês(media):
     30,41
@@ -203,7 +203,7 @@ def nome():
 
     if 49000000 < cep < 49999999:
         solar = 5.27
-        #segipe
+        #sergipe
 
     if 1000000 < cep < 19999999:
         solar = 4.45
