@@ -51,7 +51,7 @@
             <nav class="navbar navbar-expand-sm" id="navegacao">
                 <div class="collapse navbar-collapse">
                     <div class="navbar-nav" id="links">
-                        <a class="nav-link text-warning" id="nav-item" href="index.html">Início</a>
+                        <a class="nav-link text-warning" id="nav-item" href="/">Início</a>
                         <a class="nav-link text-warning" id="nav-item" href="#">Vídeos</a>
                         <a class="nav-link text-warning" id="nav-item" href="#" tabindex="-1"
                             aria-disabled="true">Ajuda</a>
@@ -68,13 +68,13 @@
     </div>
     <div class="cliente">
     <div class="text-center" id="caixasignincliente">
-    <form class="form-signin" id="cadastrocliente">
+    <form action="/cadastrarCliente" method="post" class="form-signin" id="cadastrocliente">
         <label for="inputUser" class="sr-only" id="inpute">Usuário*</label>
-        <input type="user" id="inputc" class="form-control" placeholder="Nome de Usuário" required autofocus>
+        <input type="user" name="username" id="inputc" class="form-control" placeholder="Nome de Usuário" required autofocus>
         <label for="inputCep" class="sr-only" id="inputp">CEP*</label>
-        <input type="cep" id="inputc" class="form-control" placeholder="Ex: XXXXXXXX" required autofocus>
+        <input type="cep" name="cep" id="inputc" class="form-control" placeholder="Ex: XXXXXXXX" required autofocus>
         <label for="inputPassword" class="sr-only" id="inputp">Senha*</label>
-        <input type="password" id="inputp" class="form-control" placeholder="Senha" required>
+        <input type="password" name="senha" id="inputp" class="form-control" placeholder="Senha" required>
         <button class="btn btn-lg btn-warning text-white" type="submit" id="entrar">Cadastrar</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
       </form>
