@@ -213,9 +213,6 @@ def nome():
         solar = 5.22
         #tocantins
 
-
-
-
     # processamento
     media_mes = 30.41
     eficiencia = 1
