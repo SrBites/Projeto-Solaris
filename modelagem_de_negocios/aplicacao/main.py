@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, request, render_template
+from modelagem_de_negocios.persistencia.codigo import cadastro
 from modelagem_de_negocios.util import pathing
-from modelagem_de_negocios.util import bd
 
 rota = pathing.Path()
 app = Flask(__name__, template_folder=rota.templateWay(), static_folder=rota.staticWay())
@@ -10,28 +10,25 @@ def index():
     return render_template('index.html')
 
 @app.route('/login')
-def login():
+def formLogin():
     return render_template('login.html')
 
-
 @app.route('/cadastro')
-def cadastro():
+def formCadastro():
     return render_template('cadastro.html')
-
 
 @app.route('/cadastracliente', methods=['POST'])
 def cadastraCliente():
-    username = request.form['username']
-    cep = int(request.form['cep'])
-    password = request.form['senha']
-    print('cheguei')
+    cc = cadastro.ContaCliente()
+    cc.cadastra()
 
-    mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
-    print('cheguei 2')
-    cmd = 'INSERT INTO tb_conta_cliente(nme_cliente,cep_cliente,senha_cliente) VALUES (%s, %s, %s;'
-    mysql.executar(cmd, [username, cep, password])
-    print('cheguei 3')
-    return render_template('teste.html')
+    return render_template('index.html')
 
+@app.route('/cadastraempresa', methods=['POST'])
+def cadastraEmpresa():
+    ce = cadastro.ContaEmpresa()
+    ce.cadastra()
+
+    return render_template('index.html')
 
 app.run()
