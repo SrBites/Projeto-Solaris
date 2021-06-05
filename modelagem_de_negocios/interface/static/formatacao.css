@@ -148,6 +148,15 @@ article.row div {
   margin: 5px 0;
 }
 
+<<<<<<< HEAD
+=======
+#footer {
+  position: absolute;
+  bottom: 0;
+
+}
+
+>>>>>>> 97dd1033af0a8ce988615d4ff72c05e6fd680adc
 @media (max-width: 600px) {
   article.row div {
     min-width: 300px;
