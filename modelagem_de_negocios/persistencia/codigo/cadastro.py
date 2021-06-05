@@ -11,7 +11,6 @@ class ContaCliente:
         cmd = 'INSERT INTO tb_conta_cliente(nme_cliente, senha_cliente, cep_cliente) VALUES (%s, %s, %s);'
 
         mysql.executar(cmd, [username, password, cep])
-        print('Conta cliente criada com sucesso!')
 
 class ContaEmpresa:
     def cadastra(self):
@@ -22,7 +21,6 @@ class ContaEmpresa:
         url = request.form['link']
 
         mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
-        cmd = 'INSERT INTO tb_conta_cliente(nme_empresa, senha_empresa, cnpj, regiao_atuacao, url) VALUES (%s, %s, %s, %s, %s);'
+        cmd = 'INSERT INTO tb_conta_empresa(nme_empresa, senha_empresa, cnpj, regiao_atuacao, url) VALUES (%s, %s, %s, %s, %s);'
 
         mysql.executar(cmd, [nme_empresa, password, cnpj, reg_atuacao, url])
-        print('Conta empresa criada com sucesso!')
