@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from modelagem_de_negocios.persistencia.codigo import cadastro, login
+from modelagem_de_negocios.persistencia.codigo import cadastro#, login
 from modelagem_de_negocios.util import pathing
 
 rota = pathing.Path()
