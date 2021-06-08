@@ -12,44 +12,56 @@
     <title>Cadastro</title>
     
     <script>
-    document.addEventListener("DOMContentLoaded", function (event) {
-    var element = document.getElementById('geral');
-    var height = element.offsetHeight;
-    if (height < screen.height) {
-        document.getElementById("footer").style.position = "fixed";
-        document.getElementById("footer").style.bottom = "0";
-        document.getElementById("footer").style.left = "0";
-        document.getElementById("footer").style.right = "0";
-        document.getElementById("footer").style.width = "100%";
-    }}, false);
     $(document).ready(function(){
     $(".cliente").hide();
     $(".empresa").hide();
     if ($( '.cliente' ).is(":hidden") && $('.empresa').is(":hidden")) {
-        $(".footer").css("margin-top", "200px");
+        if($(window).width() <= 1600 && $(window).height() <= 900){
+            $("#cad").css("margin-bottom", "200px");
+        }
+        if($(window).width() <= 1366 && $(window).height() <= 768){
+            $("#cad").css("margin-bottom", "50px");
+        }
+        if($(window).width() <= 1920 && $(window).height() <= 1080){
+            $("#cad").css("margin-bottom", "500px");
+        }
     }
     $("#cadastrocliente").click(function(){
         if ($('.empresa').is(":hidden")) {
             $(".cliente").show();
-            $(".footer").css("margin-top", "200px");
+            $("#cad").css("margin-bottom", "50px");
+            $(".footer").css("bottom", "0");
             $(".footer").css("width", "100%");
+            if($(window).width() <= 1920 && $(window).height() <= 1080){
+                $(".cliente").css("margin-bottom", "200px");
+            }
         } else {
             $(".empresa").hide();
             $(".cliente").show();
-            $(".footer").css("margin-top", "200px");
-             $(".footer").css("width", "100%");
+            $("#cad").css("margin-bottom", "50px");
+            $(".footer").css("bottom", "0");
+            $(".footer").css("width", "100%");
+
         }
     });
     $("#cadastroempresa").click(function(){
         if ($('.cliente').is(":hidden")) {
             $(".empresa").show();
+            $("#cad").css("margin-bottom", "50px");
             $(".footer").css("bottom", "0");
             $(".footer").css("width", "100%");
+            if($(window).width() <= 1920 && $(window).height() <= 1080){
+                $("#cad").css("margin-bottom", "1px");
+            }
         } else {
             $(".cliente").hide();
             $(".empresa").show();
+            $("#cad").css("margin-bottom", "50px");
             $(".footer").css("bottom", "0");
             $(".footer").css("width", "100%");
+            if($(window).width() <= 1920 && $(window).height() <= 1080){
+                $("#cad").css("margin-bottom", "1px");
+            }
         }
     });
 });
@@ -147,7 +159,9 @@
       </div>
 </main>
         </div>
-    <div class="footer">
+
+    </div>
+<div class="footer">
 <footer class="bg-warning text-white text-center text-lg-start" id="footer">
     <div class="container p-4" >
       <div class="row">
@@ -169,7 +183,7 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
           <h5 class="text-uppercase mb-0">Links</h5>
-  
+
           <ul class="list-unstyled mb-0 mt-2">
             <li>
               <a href="#!" class="text-white text-decoration-none">Quem somos</a>
@@ -182,7 +196,6 @@
       © 2021 Copyright: Solarits
     </div>
   </footer>
-    </div>
     </div>
 </body>
 

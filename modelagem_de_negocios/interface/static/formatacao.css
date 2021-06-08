@@ -153,6 +153,7 @@ article.row div {
   margin: 5px 0;
 }
 
+
 @media (max-width: 600px) {
   article.row div {
     min-width: 300px;
