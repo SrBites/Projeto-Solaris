@@ -1,6 +1,15 @@
 from flask import Flask, render_template
+import sys
+sys.path.append("modelagem_de_negocios")
 from modelagem_de_negocios.persistencia.codigo import cadastro#, login
 from modelagem_de_negocios.util import pathing
+
+'''
+set FLASK_DEBUG=1
+set FLASK_ENV=development
+set FLASK_APP=modelagem_de_negocios.aplicacao.main.py
+flask run
+'''
 
 rota = pathing.Path()
 app = Flask(__name__, template_folder=rota.templateWay(), static_folder=rota.staticWay())
@@ -8,6 +17,10 @@ app = Flask(__name__, template_folder=rota.templateWay(), static_folder=rota.sta
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/ajuda')
+def ajuda():
+    return render_template('ajuda.html')
 
 @app.route('/login')
 def formLogin():
