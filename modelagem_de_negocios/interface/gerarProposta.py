@@ -3,7 +3,7 @@ app = Flask(__name__)
 import math
 # versão 1.1
 
-@app.route('/gerarProposta')
+@app.route('/') #gerarProposta
 def index():
     # um template generico apenas para testar o funcionamento do calculo
     # templates/numeros.html
@@ -175,7 +175,7 @@ def nome():
 
     if 20000000 < cep < 28999999:
         solar = 4.73
-        #rio de janeiro
+        #rio de janeirossss
 
     if 59000000 < cep < 59999999:
         solar = 5.98

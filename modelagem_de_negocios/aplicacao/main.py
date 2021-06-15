@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from modelagem_de_negocios.persistencia.codigo import cadastro#, login
+from modelagem_de_negocios.persistencia.codigo import cadastro, login
 from modelagem_de_negocios.util import pathing
 
 rota = pathing.Path()
@@ -17,6 +17,10 @@ def formLogin():
 def formCadastro():
     return render_template('cadastro.html')
 
+@app.route('/ajuda')
+def ajuda():
+    return render_template('ajuda.html')
+
 @app.route('/cadastracliente', methods=['POST'])
 def cadastraCliente():
     cad_c = cadastro.ContaCliente()
@@ -28,13 +32,17 @@ def cadastraEmpresa():
     cad_e = cadastro.ContaEmpresa()
     cad_e.cadastra()
     return render_template('login.html')
-'''
+
+
 @app.route('/logincliente', methods=['POST'])
 def loginCliente():
     log_c = login.ContaCliente()
-    log_c.loga()
-    return render_template('index.html')
+    if log_c.loga():
+        return render_template('index.html')
+    else:
+        return render_template('login.html')
 
+'''
 @app.route('/loginempresa', methods=['POST'])
 def loginEmpresa():
     log_e = login.ContaEmpresa()
