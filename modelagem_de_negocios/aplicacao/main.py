@@ -46,20 +46,20 @@ def cadastraEmpresa():
     cad_e.cadastra()
     return render_template('login.html')
 
-
 @app.route('/logincliente', methods=['POST'])
 def loginCliente():
-    log_c = login.ContaCliente()
+    log_c = login.LoginCliente()
     if log_c.loga():
         return render_template('index.html')
-    else:
-        return render_template('login.html')
 
-'''
+    return render_template('login.html')
+
 @app.route('/loginempresa', methods=['POST'])
 def loginEmpresa():
-    log_e = login.ContaEmpresa()
-    log_e.loga()
-    return render_template('index.html')
-'''
+    log_e = login.LoginEmpresa()
+    if log_e.loga():
+        return render_template('index.html')
+
+    return render_template('login.html')
+
 app.run()

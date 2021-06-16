@@ -16,5 +16,11 @@ class SQL:
         cs.execute(comando, parametros)
         return cs
 
+    def login(self, comando, parametros):
+        cs = self.cnx.cursor()
+        cs.execute(comando, parametros)
+        verify = cs.fetchone()
+        return verify
+
     def __del__(self):
         self.cnx.close()
