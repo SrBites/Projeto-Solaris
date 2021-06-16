@@ -83,12 +83,18 @@ article.row div {
 
 #navegacao {
     color: #888888;
+    margin-left: 15px;
 }
 
 #nav-item {
     font-size: 21px;
     margin: 0 15px;
     
+}
+
+#nav-item2 {
+    font-size: 21px;
+    margin: 0 5px;
 }
 
 #cad {
