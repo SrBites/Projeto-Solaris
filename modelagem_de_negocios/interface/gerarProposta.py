@@ -3,7 +3,11 @@ app = Flask(__name__)
 import math
 # versão 1.1
 
+<<<<<<< HEAD
+@app.route('/')
+=======
 @app.route('/') #gerarProposta
+>>>>>>> 3020bcd519d8e798a1af6f3b00ff6975a2b3c558
 def index():
     # um template generico apenas para testar o funcionamento do calculo
     # templates/numeros.html
