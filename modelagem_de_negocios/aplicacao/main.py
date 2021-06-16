@@ -40,6 +40,7 @@ def cadastraCliente():
     cad_c.cadastra()
     return render_template('login.html')
 
+
 @app.route('/cadastraempresa', methods=['POST'])
 def cadastraEmpresa():
     cad_e = cadastro.ContaEmpresa()
