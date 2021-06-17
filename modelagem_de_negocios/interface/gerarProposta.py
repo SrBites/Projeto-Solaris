@@ -3,6 +3,14 @@ app = Flask(__name__)
 import math
 # versão 1.1
 
+
+'''
+set FLASK_DEBUG=1
+set FLASK_ENV=development
+set FLASK_APP=modelagem_de_negocios.interface.gerarProposta.py
+flask run
+'''
+
 @app.route('/')
 def index():
     # um template generico apenas para testar o funcionamento do calculo
@@ -228,10 +236,10 @@ def nome():
 
     rep = ''
 
-    rep += f'<p>São necessarias:{qnt_400:.0f} placas de 400w para suprir seus recursos</p>\n'
-    rep += f'<p>ou...</p>\n'
-    rep += f'<p>{qnt_500:.0f} placas de 500w</p>\n'
-    rep += f'<p>Isto é um valor aproximado, sempre consulte um especialista para confirmar e avaliar sua residencia!</p>\n'
+    rep += f'<h1 class="display-6">São necessarias: {qnt_400:.0f} placas de 400w para suprir seus recursos</h1>\n'
+    rep += f'<h1 class="display-6">ou...</h1>\n'
+    rep += f'<h1 class="display-6">{qnt_500:.0f} placas de 500w</h1>\n'
+    rep += f'<h1 class="display-6">Isto é um valor aproximado, sempre consulte um especialista para confirmar e avaliar sua residência!</h1>\n'
 
     # templates/operacoes.html
     return render_template('proposta.html', rep=rep)
