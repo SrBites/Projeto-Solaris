@@ -101,12 +101,12 @@ article.row div {
   margin-bottom: 30px;
 }
 
-#cadastrocliente, #cadastroempresa {
+#cadastrocliente, #logincliente, #loginempresa, #cadastroempresa {
   margin: 0 15px;
   font-size: 13px;
 }
 
-#caixalogin, #caixasigninempresa, #caixasignincliente {
+#caixalogincliente, #caixaloginempresa , #caixasigninempresa, #caixasignincliente {
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -144,12 +144,8 @@ article.row div {
 .form-login, .form-signin  .form-control:focus {
   z-index: 2;
 }
-.form-login, .form-signin  input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-login, .form-signin  input[type="password"] {
+
+.form-login, .form-signin  input {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
