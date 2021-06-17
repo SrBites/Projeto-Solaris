@@ -13,6 +13,23 @@
 
 <body>
     <header>
+        <div class="container">
+            <!--criamos um container que vai exibir as mensagens de alerta-->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <!--condição para as mensagens-->
+                    <ul id="messages" class="list-unstyled">
+                        <!--criamos um laço de repetição para essas mensagens de alerta-->
+                    {% for message in messages %}
+                        <li class="alert alert-success">{{ message }}</li>
+                        <!--chamada da mensagem-->
+                    {% endfor %}
+                    <!--fim do for-->
+                    </ul>
+                {% endif %}
+                <!--fim do if-->
+            {% endwith %}
+        </div>
         <div class="jumbotron jumbotron-fluid" id="titulo">
             <h1 class="text-center">SOLARITS</h1>
         </div>

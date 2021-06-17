@@ -3,7 +3,6 @@ from modelagem_de_negocios.util import bd
 
 class LoginCliente:
     def loga(self):
-
         username = request.form['username']
         password = request.form['senha']
         mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
@@ -15,11 +14,22 @@ class LoginCliente:
 
         try:
             if username in verificaLogin and password in verificaLogin:
-                print('Login de cliente efetuado com sucesso!')
+                print(verificaLogin[0])
                 return True
         except:
-            print('Usuário ou senha errados!')
             return False
+
+    def getDados(self, dado):
+        username = request.form['username']
+        password = request.form['senha']
+        mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
+
+        cmd = '''SELECT * FROM tb_conta_cliente
+        WHERE nme_cliente=%s AND senha_cliente=%s;
+        '''
+        id_sessao = mysql.login(cmd, [username, password])
+
+        return id_sessao[dado]
 
 class LoginEmpresa:
     def loga(self):
@@ -34,8 +44,6 @@ class LoginEmpresa:
 
         try:
             if username in verificaLogin and password in verificaLogin:
-                print('Login de empresa efetuado com sucesso!')
                 return True
         except:
-            print('Usuário ou senha errados!')
             return False
