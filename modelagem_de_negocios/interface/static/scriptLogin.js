@@ -28,7 +28,7 @@ $(document).ready(function(){
             $(".footer").css("bottom", "0");
             $(".footer").css("width", "100%");
             if($(window).width() <= 1920 && $(window).height() <= 1080){
-                $(".empresa").css("margin-bottom", "100px");
+                $(".cliente").css("margin-bottom", "100px");
             }
 
         }
@@ -40,7 +40,7 @@ $(document).ready(function(){
             $(".footer").css("bottom", "0");
             $(".footer").css("width", "100%");
             if($(window).width() <= 1920 && $(window).height() <= 1080){
-                $(".cliente").css("margin-bottom", "100px");
+                $(".empresa").css("margin-bottom", "100px");
             }
         } else {
             $(".cliente").hide();
@@ -49,7 +49,7 @@ $(document).ready(function(){
             $(".footer").css("bottom", "0");
             $(".footer").css("width", "100%");
             if($(window).width() <= 1920 && $(window).height() <= 1080){
-                $(".cliente").css("margin-bottom", "100px");
+                $(".empresa").css("margin-bottom", "100px");
             }
         }
     });
