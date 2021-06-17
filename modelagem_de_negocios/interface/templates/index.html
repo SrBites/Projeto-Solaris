@@ -13,6 +13,23 @@
 
 <body>
     <header>
+        <div class="container">
+            <!--criamos um container que vai exibir as mensagens de alerta-->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <!--condição para as mensagens-->
+                    <ul id="messages" class="list-unstyled">
+                        <!--criamos um laço de repetição para essas mensagens de alerta-->
+                    {% for message in messages %}
+                        <li class="alert alert-success">{{ message }}</li>
+                        <!--chamada da mensagem-->
+                    {% endfor %}
+                    <!--fim do for-->
+                    </ul>
+                {% endif %}
+                <!--fim do if-->
+            {% endwith %}
+        </div>
         <div class="jumbotron jumbotron-fluid" id="titulo">
             <h1 class="text-center">SOLARITS</h1>
         </div>
@@ -21,7 +38,7 @@
                 <div class="collapse navbar-collapse">
                     <div class="navbar-nav" id="links">
                         <a class="nav-link text-warning" id="nav-item" href="/">Início</a>
-                        <a class="nav-link text-warning" id="nav-item" href="/videos">Vídeos</a>
+                        <a class="nav-link text-warning" id="nav-item" href="/logout">Vídeos</a>
                         <a class="nav-link text-warning" id="nav-item2" href="/quemsomos">Quem Somos</a>
                       </div>
                 </div>
@@ -32,7 +49,6 @@
             <a href="/login"><button type="button" class="btn btn-warning" id="logcad">Login</button></a>
             <a href="/cadastro"><button type="button" class="btn btn-warning" id="logcad">Cadastro</button></a>
         </div>
-
     </header>
     <main>
         <div id="caixa1">

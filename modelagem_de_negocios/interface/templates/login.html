@@ -15,6 +15,23 @@
 
 <body>
     <header>
+        <div class="container">
+            <!--criamos um container que vai exibir as mensagens de alerta-->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <!--condição para as mensagens-->
+                    <ul id="messages" class="list-unstyled">
+                        <!--criamos um laço de repetição para essas mensagens de alerta-->
+                    {% for message in messages %}
+                        <li class="alert alert-success">{{ message }}</li>
+                        <!--chamada da mensagem-->
+                    {% endfor %}
+                    <!--fim do for-->
+                    </ul>
+                {% endif %}
+                <!--fim do if-->
+            {% endwith %}
+        </div>
         <div class="jumbotron jumbotron-fluid" id="titulo">
             <h1 class="text-center">SOLARITS</h1>
         </div>
@@ -40,7 +57,7 @@
     <div class="text-center" id="caixalogincliente">
     <form action="/logincliente" method="post" class="form-login" id="logincliente">
         <label for="inputUser" class="sr-only" id="inpute">Usuário*</label>
-        <input type="text" name="username" id="inputc" class="form-control" placeholder="Nome de Usuário" required autofocus>
+        <input type="text" name="nome_cliente" id="inputc" class="form-control" placeholder="Nome de Usuário" required autofocus>
         <label for="inputPassword" class="sr-only" id="inputp">Senha*</label>
         <input type="password" name="senha" id="inputp" class="form-control" placeholder="Senha" required>
         <button class="btn btn-lg btn-warning text-white" type="submit" id="entrar">Entrar</button>
