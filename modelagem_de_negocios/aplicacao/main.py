@@ -55,15 +55,18 @@ def loginCliente():
         usuario = log_c.getDados(1)
         flash(f'Olá, {usuario}! Login efetuado com sucesso!')
         return redirect(url_for('index'))
-
+    flash('Usuário ou senha incorretos, tente novamente')
     return render_template('login.html')
 
 @app.route('/loginempresa', methods=['POST'])
 def loginEmpresa():
     log_e = login.LoginEmpresa()
     if log_e.loga():
-        return render_template('index.html')
-
+        session['usuario_logado'] = log_e.getDados(0)
+        usuario = log_e.getDados(1)
+        flash(f'Olá, {usuario}! Login efetuado com sucesso!')
+        return redirect(url_for('index'))
+    flash(f'Usuário ou senha incorretos, tente novamente')
     return render_template('login.html')
 
 @app.route('/logout')
