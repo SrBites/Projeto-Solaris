@@ -83,7 +83,6 @@ def nome():
     m11 = int(request.form['m11'])
     m12 = int(request.form['m12'])
     sis = request.form['tiposis']
-
     # como não existe conta cliente, não é possivel acessar os dados como o cep, por isso utilizei o request
     # porém,originalmente ele virá do banco de dados da conta cliente
     

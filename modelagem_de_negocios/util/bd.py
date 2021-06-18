@@ -16,7 +16,7 @@ class SQL:
         cs.execute(comando, parametros)
         return cs
 
-    def login(self, comando, parametros):
+    def sessao(self, comando, parametros):
         cs = self.cnx.cursor()
         cs.execute(comando, parametros)
         verify = cs.fetchone()
