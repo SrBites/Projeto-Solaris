@@ -1,6 +1,5 @@
 Possiveis features do site
 - Mapa interativo
 - Mascara para o CPF e CNPJ
-- Simplificar o código para seleção de estado de atuação
-- Arrumar os ids, names e types
-- Criar uma classe para reduzir código de template_dir e static_dir
+- Mudança de interface quando logado
+- Tentar aumentar a eficiencia do login

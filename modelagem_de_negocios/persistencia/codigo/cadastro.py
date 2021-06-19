@@ -5,7 +5,7 @@ class ContaCliente:
     def cadastra(self):
         username = request.form['username']
         password = request.form['senha']
-        cep = int(request.form['cep'])
+        cep = request.form['cep']
 
         mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
         cmd = 'INSERT INTO tb_conta_cliente(nme_cliente, senha_cliente, cep_cliente) VALUES (%s, %s, %s);'

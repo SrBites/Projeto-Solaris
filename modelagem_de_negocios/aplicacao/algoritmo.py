@@ -13,7 +13,7 @@ class IndicieSolarimetrico:
         return estado[3]
 
 class Proposta:
-    def calculo(self):
+    def calculo(self, cep):
         m1 = int(request.form['m1'])
         m2 = int(request.form['m2'])
         m3 = int(request.form['m3'])
@@ -28,10 +28,9 @@ class Proposta:
         m12 = int(request.form['m12'])
         sis = request.form['tiposis']
 
-        cep = int(request.form['cep'])      # <------------------------ MUDAR ISSO AQUI
+        cep = cep
 
         recuo = 0
-        solar = float(0.0)
         ind_solar = IndicieSolarimetrico()
 
         if sis == 'Monofásico':
@@ -117,10 +116,13 @@ class Proposta:
             solar = ind_solar.getIndicie('SP')
 
         elif 49000000 < cep < 49999999: #SE
-            ssolar = ind_solar.getIndicie('SE')
+            solar = ind_solar.getIndicie('SE')
 
         elif 77000000 < cep < 77999999: #TO
             solar = ind_solar.getIndicie('TO')
+
+        else:
+            solar = 0.0
 
         media_mes = 30.41
         eficiencia = 1
@@ -137,9 +139,9 @@ class Proposta:
 
         rep = ''
 
-        rep += f'<p>São necessarias:{qnt_400:.0f} placas de 400w para suprir seus recursos</p>\n'
-        rep += f'<p>ou...</p>\n'
-        rep += f'<p>{qnt_500:.0f} placas de 500w</p>\n'
-        rep += f'<p>Isto é um valor aproximado, sempre consulte um especialista para confirmar e avaliar sua residencia!</p>\n'
+        rep += f'<h1 class="display-6">São necessarias: {qnt_400:.0f} placas de 400w para suprir seus recursos</h1>\n'
+        rep += f'<h1 class="display-6">ou...</h1>\n'
+        rep += f'<h1 class="display-6">{qnt_500:.0f} placas de 500w</h1>\n'
+        rep += f'<h1 class="display-6">Isto é um valor aproximado, sempre consulte um especialista para confirmar e avaliar sua residência!</h1>'
 
         return rep

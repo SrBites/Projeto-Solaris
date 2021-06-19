@@ -31,7 +31,8 @@ class LoginCliente:
         elif dado == 'user':
             return user_sessao[1]
         elif dado == 'cep':
-            return user_sessao[3]
+            cep_int = int(''.join(n for n in user_sessao[3] if n.isdecimal()))
+            return cep_int
 
 class LoginEmpresa:
     def loga(self):

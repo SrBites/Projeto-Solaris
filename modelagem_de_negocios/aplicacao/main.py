@@ -10,14 +10,6 @@ set FLASK_APP=modelagem_de_negocios.aplicacao.main.py
 flask run
 '''
 
-#---DADOS CLIENTE---
-cliente = ''
-cep = 0
-
-#---DADOS EMPRESA---
-empresa = ''
-cnpj = ''
-
 rota = pathing.Path()
 app = Flask(__name__, template_folder=rota.templateWay(), static_folder=rota.staticWay())
 app.secret_key = 'ventodonorte'
@@ -45,7 +37,7 @@ def proposta():
 @app.route('/geraproposta', methods=['POST'])
 def geraProposta():
     proposta = algoritmo.Proposta()
-    res = proposta.calculo()
+    res = proposta.calculo(session['cep'])
     return render_template('proposta.html', rep=res)
 
 #---CADASTRO---
@@ -57,7 +49,7 @@ def formCadastro():
 def cadastraCliente():
     cad_c = cadastro.ContaCliente()
     cad_c.cadastra()
-    flash('Cliente cadastrada com sucesso!')
+    flash('Cliente cadastrado com sucesso!')
 
     return redirect(url_for('formLogin'))
 
@@ -79,10 +71,10 @@ def loginCliente():
     log_c = login.LoginCliente()
 
     if log_c.loga():
-        session['usuario_logado'] = log_c.getDados('id')
-        usuario = log_c.getDados('user')
-        #cep = log_c.getDados('cep')
-        flash(f'Olá, {usuario}! Login efetuado com sucesso!')
+        session['usuario_logado'] = log_c.getDados('user')
+
+        session['cep'] = int(log_c.getDados('cep'))
+        flash(f"Olá, {session['usuario_logado']}! Login efetuado com sucesso!")
         return redirect(url_for('index'))
 
     flash('Usuário ou senha incorretos, tente novamente')
@@ -93,10 +85,8 @@ def loginEmpresa():
     log_e = login.LoginEmpresa()
 
     if log_e.loga():
-        session['usuario_logado'] = log_e.getDados('id')
-        usuario, empresa = log_e.getDados('user')
-        cnpj = log_e.getDados('cnpj')
-        flash(f'Olá, {usuario}! Login efetuado com sucesso!')
+        session['usuario_logado'] = log_e.getDados('user')
+        flash(f"Olá, {session['usuario_logado']}! Login efetuado com sucesso!")
         return redirect(url_for('index'))
 
     flash(f'Usuário ou senha incorretos, tente novamente')
@@ -106,8 +96,9 @@ def loginEmpresa():
 @app.route('/logout')
 def logout():
     session['usuario_logado'] = None
+    session['cep'] = None
     flash('Usuário deslogado, faça o login novamente para ter acesso a todas funcionalidades do site')
 
-    return redirect(url_for('index.html'))
+    return redirect(url_for('index'))
 
 app.run()
