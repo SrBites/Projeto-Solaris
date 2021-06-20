@@ -72,7 +72,6 @@ def loginCliente():
 
     if log_c.loga():
         session['usuario_logado'] = log_c.getDados('user')
-
         session['cep'] = int(log_c.getDados('cep'))
         flash(f"Olá, {session['usuario_logado']}! Login efetuado com sucesso!")
         return redirect(url_for('index'))
@@ -95,6 +94,10 @@ def loginEmpresa():
 #---LOGOUT---
 @app.route('/logout')
 def logout():
+    if session['usuario_logado'] == None:
+        flash('Atualmente você não se encontra em nenhuma sessão')
+        return redirect(url_for('index'))
+
     session['usuario_logado'] = None
     session['cep'] = None
     flash('Usuário deslogado, faça o login novamente para ter acesso a todas funcionalidades do site')

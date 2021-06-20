@@ -12,6 +12,7 @@
     <script src="static/js/jquery.mask.min.js"></script>
     <script src="static/js/script.cadastro.js"></script>
     <script src="static/js/script.mascara.js"></script>
+
     <title>Cadastro</title>
 </head>
 
@@ -39,13 +40,13 @@
     </div>
     <div class="cliente">
     <div class="text-center" id="caixasignincliente">
-    <form action="/cadastracliente" method="post" class="form-signin" id="cadastrocliente">
+    <form action="/cadastracliente" name="cadastrocliente" method="post" class="form-signin" >
         <label for="inputUser" class="sr-only" id="inpute">Usuário*</label>
-        <input type="text" name="username" id="inputc" class="form-control" placeholder="Nome de Usuário" required autofocus>
+        <input type="text" name="username" id="username" class="form-control" placeholder="Nome de Usuário" required autofocus>
         <label for="inputCep" class="sr-only" id="inputp">CEP*</label>
         <input type="text" name="cep" id="cep" class="form-control" placeholder="Digite apenas os números" required autofocus>
         <label for="inputPassword" class="sr-only" id="inputp">Senha*</label>
-        <input type="password" name="senha" id="inputp" class="form-control" placeholder="Senha" required>
+        <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" required>
         <button class="btn btn-lg btn-warning text-white" type="submit" id="entrar">Cadastrar</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
       </form>
@@ -53,13 +54,13 @@
     </div>
     <div class="empresa">
     <div class="text-center" id="caixasigninempresa">
-      <form action="/cadastraempresa" method="post" class="form-signin" id="cadastroempresa">
+      <form action="/cadastraempresa" name="cadastroempresa" method="post" class="form-signin">
           <label for="inputUser" class="sr-only" id="inputc" >Nome da Empresa*</label>
-          <input type="text" name="nome_empresa" id="inpute" class="form-control" placeholder="Nome da empresa" required autofocus>
+          <input type="text" name="nome_empresa" id="nome_empresa" class="form-control" placeholder="Nome da empresa" required autofocus>
           <label for="inputCnpj" class="sr-only" id="inputp">CNPJ*</label>
           <input type="text" name="cnpj" id="cnpj" class="form-control" required>
           <label for="escolheRegiao" class="sr-only" id="inputp">Região de Atuação*</label>
-          <select name="atuacao" class="form-control" id="escolheRegiao" required>
+          <select name="atuacao" id="atuacao" class="form-control" required>
             <option value="Escolha o estado" selected></option>
             <option>AC</option>>
             <option>AL</option>>
@@ -89,9 +90,9 @@
             <option>TO</option>>
           </select>
           <label for="inputPassword" class="sr-only" id="inputp">Senha*</label>
-          <input type="password" name="senha" id="inputp" class="form-control" placeholder="Senha" required>
+          <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" required>
           <label for="inputLink" class="sr-only" id="inputc">Link da Empresa</label>
-          <input type="text" name="link" id="inpute" class="form-control" placeholder="https://example.com" autofocus>
+          <input type="text" name="link" id="link" class="form-control" placeholder="https://example.com" autofocus>
           <button class="btn btn-lg btn-warning text-white" type="submit" id="entrar">Cadastrar</button>
           <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
         </form>
