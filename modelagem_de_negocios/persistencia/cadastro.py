@@ -3,7 +3,7 @@ from modelagem_de_negocios.util import bd
 
 class ContaCliente:
     def cadastra(self):
-        username = request.form['username']
+        username = request.form['nme_cliente']
         password = request.form['senha']
         cep = request.form['cep']
 
@@ -14,7 +14,7 @@ class ContaCliente:
 
 class ContaEmpresa:
     def cadastra(self):
-        nme_empresa = request.form['nome_empresa']
+        nme_empresa = request.form['nme_empresa']
         cnpj = request.form['cnpj']
         reg_atuacao = request.form['atuacao']
         password = request.form['senha']

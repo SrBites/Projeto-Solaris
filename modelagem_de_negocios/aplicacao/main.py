@@ -16,6 +16,9 @@ app.secret_key = 'ventodonorte'
 
 @app.route('/')
 def index():
+    if session['usuario_logado'] != None:
+        return render_template('indexsession.html')
+
     return render_template('index.html')
 
 #---FUNCIONALIDADES---

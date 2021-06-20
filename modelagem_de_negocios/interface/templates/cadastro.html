@@ -21,24 +21,21 @@
         <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
           <div class="container">
             <a href="#" class="navbar-brand">
-              <!-- Logo Image -->
-              <img src="https://cdn.discordapp.com/attachments/699712563176538182/855178255597174864/20210520_211529_0000.png" width="45" alt="" class="d-inline-block align-middle mr-2">
-              <!-- Logo Text -->
+              <img src="https://cdn.discordapp.com/attachments/699712563176538182/855178255597174864/20210520_211529_0000.png" width="90" alt="" class="d-inline-block align-middle mr-2">
               <span class="text-uppercase font-weight-bold">Solarits</span>
             </a>
 
             <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
 
             <div id="navbarSupportedContent" class="collapse navbar-collapse">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="/" class="nav-link">Início</a></li>
+              <ul class="text-uppercase navbar-nav ml-auto">
+                <li class="nav-item"><a href="/" class="nav-link">Início</a></li>
                 <li class="nav-item"><a href="/quemsomos" class="nav-link">Quem Somos</a></li>
-                <li class="nav-item"><a href="/cadastro" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
               </ul>
             </div>
           </div>
         </nav>
-
     </header>
     <main>
       <div class="caixa2" id="cad">
@@ -49,7 +46,7 @@
     <div class="text-center" id="caixasignincliente">
     <form action="/cadastracliente" name="cadastrocliente" method="post" class="form-signin" >
         <label for="inputUser" class="sr-only" id="inpute">Usuário*</label>
-        <input type="text" name="username" id="username" class="form-control" placeholder="Nome de Usuário" required autofocus>
+        <input type="text" name="nme_cliente" id="nme_cliente" class="form-control" placeholder="Nome de Usuário" required autofocus>
         <label for="inputCep" class="sr-only" id="inputp">CEP*</label>
         <input type="text" name="cep" id="cep" class="form-control" placeholder="Digite apenas os números" required autofocus>
         <label for="inputPassword" class="sr-only" id="inputp">Senha*</label>
@@ -63,7 +60,7 @@
     <div class="text-center" id="caixasigninempresa">
       <form action="/cadastraempresa" name="cadastroempresa" method="post" class="form-signin">
           <label for="inputUser" class="sr-only" id="inputc" >Nome da Empresa*</label>
-          <input type="text" name="nome_empresa" id="nome_empresa" class="form-control" placeholder="Nome da empresa" required autofocus>
+          <input type="text" name="nme_empresa" id="nme_empresa" class="form-control" placeholder="Nome da Empresa" required autofocus>
           <label for="inputCnpj" class="sr-only" id="inputp">CNPJ*</label>
           <input type="text" name="cnpj" id="cnpj" class="form-control" required>
           <label for="escolheRegiao" class="sr-only" id="inputp">Região de Atuação*</label>
@@ -107,7 +104,7 @@
       </div>
 </main>
 
-<footer class="bg-warning text-white text-center text-lg-start position-fixed fixed-bottom">
+<footer class="bg-warning text-white text-center text-lg-start">
             <div class="container p-4" >
               <div class="row">
                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0">

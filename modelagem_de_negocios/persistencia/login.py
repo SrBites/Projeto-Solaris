@@ -3,7 +3,7 @@ from modelagem_de_negocios.util import bd
 
 class LoginCliente:
     def loga(self):
-        username = request.form['nome_cliente']
+        username = request.form['nme_cliente']
         password = request.form['senha']
         mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
 
@@ -19,7 +19,7 @@ class LoginCliente:
             return False
 
     def getDados(self, dado):
-        username = request.form['nome_cliente']
+        username = request.form['nme_cliente']
         password = request.form['senha']
         mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
 
@@ -38,7 +38,7 @@ class LoginCliente:
 
 class LoginEmpresa:
     def loga(self):
-        username = request.form['nome_empresa']
+        username = request.form['nme_empresa']
         password = request.form['senha']
         mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
 
@@ -55,7 +55,7 @@ class LoginEmpresa:
             return False
 
     def getDados(self, dado):
-        username = request.form['nome_empresa']
+        username = request.form['nme_empresa']
         password = request.form['senha']
         mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
 

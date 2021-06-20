@@ -8,7 +8,8 @@ class IndicieSolarimetrico:
         mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
 
         cmd = 'SELECT * FROM tb_mapa_incidencia WHERE sgl_estado=%s'
-        estado = mysql.sessao(cmd, [sgl_estado])
+        cs = mysql.consultar(cmd, [sgl_estado])
+        estado = cs.fetchone()
 
         return estado[3]
 
