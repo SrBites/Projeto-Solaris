@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/formatacao.css" type="text/css">
+    <link rel="stylesheet" href="static/formatacao.css" type="text/css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
@@ -20,22 +20,22 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
-          <div class="container">
-            <a href="#" class="navbar-brand">
+
+            <a href="#" class="navbar-brand" style="margin-left: 150px;" id="logo">
               <img src="https://cdn.discordapp.com/attachments/699712563176538182/855178255597174864/20210520_211529_0000.png" width="90" alt="" class="d-inline-block align-middle mr-2">
               <span class="text-uppercase font-weight-bold">Solarits</span>
             </a>
 
             <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
 
-            <div id="navbarSupportedContent" class="collapse navbar-collapse">
-              <ul class="text-uppercase navbar-nav ml-auto">
-                <li class="nav-item"><a href="/" class="nav-link">Início</a></li>
-                <li class="nav-item"><a href="/quemsomos" class="nav-link">Quem Somos</a></li>
-                <li class="nav-item"><a href="/cadastro" class="nav-link">Cadastrar</a></li>
+            <div id="navbarSupportedContent" style="margin-left: 200px;" class="collapse navbar-collapse justify-content-around">
+              <ul class="navbar-nav">
+                <li class="nav-item text-uppercase"><a href="/" class="nav-link">Início</a></li>
+                <li class="nav-item text-uppercase"><a href="/quemsomos" class="nav-link">Quem Somos</a></li>
+                <li class="nav-item text-uppercase"><a href="/cadastro" class="nav-link">Cadastrar</a></li>
               </ul>
             </div>
-          </div>
+
         </nav>
         <div class="container">
             {% with messages = get_flashed_messages() %}
@@ -57,7 +57,7 @@
     <div class="cliente">
     <div class="text-center" id="caixalogincliente">
     <form action="/logincliente" method="post" class="form-login" id="logincliente">
-        <label for="inputUser" class="sr-only" id="inpute">Usuário*</label>
+        <label for="inputUser" class="sr-only" id="inputc">Usuário*</label>
         <input type="text" name="nome_cliente" id="inputc" class="form-control" placeholder="Nome de Usuário" required autofocus>
         <label for="inputPassword" class="sr-only" id="inputp">Senha*</label>
         <input type="password" name="senha" id="inputp" class="form-control" placeholder="Senha" required>
@@ -70,7 +70,7 @@
     <div class="text-center" id="caixaloginempresa">
       <form action="/loginempresa" method="post" class="form-login" id="loginempresa">
           <label for="inputUser" class="sr-only" id="inputc" >Usuário da Empresa*</label>
-          <input type="text" name="nome_empresa" id="inpute" class="form-control" placeholder="Nome da empresa" required autofocus>
+          <input type="text" name="nome_empresa" id="inputc" class="form-control" placeholder="Nome da empresa" required autofocus>
           <label for="inputPassword" class="sr-only" id="inputp">Senha*</label>
           <input type="password" name="senha" id="inputp" class="form-control" placeholder="Senha" required>
           <button class="btn btn-lg btn-warning text-white" type="submit" id="entrar">Entrar</button>
@@ -79,7 +79,7 @@
     </div>
       </div>
 </main>
-    <footer class="bg-warning text-white text-center text-lg-start position-fixed fixed-bottom">
+    <footer class="bg-warning text-white text-center text-lg-start">
             <div class="container p-4" >
               <div class="row">
                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0">

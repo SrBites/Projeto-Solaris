@@ -2,6 +2,8 @@
   flex-grow: 3;
 }
 
+
+
 .caixa {
   display: flex;
   justify-content: center;
@@ -154,6 +156,8 @@ article.row div {
 #inputp, #inputc, #inputcnpj, #entrar {
   margin: 5px 0;
 }
+
+
 
 
 @media (max-width: 600px) {
