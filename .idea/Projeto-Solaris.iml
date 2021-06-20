@@ -6,6 +6,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="UniCEUB" />
     <orderEntry type="module" module-name="Teste-Codigos" />
+    <orderEntry type="module" module-name="UniCEUB" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />

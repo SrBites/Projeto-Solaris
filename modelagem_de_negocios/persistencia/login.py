@@ -9,10 +9,11 @@ class LoginCliente:
 
         cmd = '''SELECT * FROM tb_conta_cliente
         WHERE nme_cliente=%s AND senha_cliente=%s;'''
-        verificaLogin = mysql.sessao(cmd, [username, password])
+        cs = mysql.consultar(cmd, [username, password])
+        validaLogin = cs.fetchone()
 
         try:
-            if username in verificaLogin and password in verificaLogin:
+            if username in validaLogin and password in validaLogin:
                 return True
         except:
             return False
@@ -24,7 +25,8 @@ class LoginCliente:
 
         cmd = '''SELECT * FROM tb_conta_cliente
         WHERE nme_cliente=%s AND senha_cliente=%s;'''
-        user_sessao = mysql.sessao(cmd, [username, password])
+        cs = mysql.consultar(cmd, [username, password])
+        user_sessao = cs.fetchone()
 
         if dado == 'id':
             return user_sessao[0]
@@ -42,10 +44,11 @@ class LoginEmpresa:
 
         cmd = '''SELECT * FROM tb_conta_empresa
         WHERE nme_empresa=%s AND senha_empresa=%s;'''
-        verificaLogin = mysql.sessao(cmd, [username, password])
+        cs = mysql.consultar(cmd, [username, password])
+        validaLogin = cs.fetchone()
 
         try:
-            if username in verificaLogin and password in verificaLogin:
+            if username in validaLogin and password in validaLogin:
                 print(verificaLogin[0])
                 return True
         except:
@@ -58,7 +61,8 @@ class LoginEmpresa:
 
         cmd = '''SELECT * FROM tb_conta_empresa
         WHERE nme_empresa=%s AND senha_empresa=%s;'''
-        user_sessao = mysql.sessao(cmd, [username, password])
+        cs = mysql.consultar(cmd, [username, password])
+        user_sessao = cs.fetchone()
 
         if dado == 'id':
             return user_sessao[0]

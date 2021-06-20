@@ -1,5 +1,5 @@
 from flask import Flask, render_template, session, flash, url_for, redirect
-from modelagem_de_negocios.persistencia.codigo import cadastro, login
+from modelagem_de_negocios.persistencia import login, cadastro
 from modelagem_de_negocios.util import pathing
 from modelagem_de_negocios.aplicacao import algoritmo
 
@@ -21,9 +21,6 @@ def index():
 #---FUNCIONALIDADES---
 @app.route('/quemsomos')
 def quemSomos():
-    if 'usuario_logado' not in session or session['usuario_logado'] == None:
-        flash('Voce deve estar logado para acessar esta função')
-        return redirect(url_for('formLogin'))
     return render_template('quemsomos.html')
 
 #---PROPOSTA---
