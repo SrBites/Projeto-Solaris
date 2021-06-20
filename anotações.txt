@@ -1,5 +1,2 @@
 Possiveis features do site
-- Mapa interativo
-- Mascara para o CPF e CNPJ
 - Mudança de interface quando logado
-- Tentar aumentar a eficiencia do login

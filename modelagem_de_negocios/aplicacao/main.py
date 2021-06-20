@@ -71,7 +71,7 @@ def loginCliente():
         session['usuario_logado'] = log_c.getDados('user')
         session['cep'] = int(log_c.getDados('cep'))
         flash(f"Olá, {session['usuario_logado']}! Login efetuado com sucesso!")
-        return redirect(url_for('index'))
+        return render_template('indexsession.html')
 
     flash('Usuário ou senha incorretos, tente novamente')
     return redirect(url_for('formLogin'))

@@ -18,20 +18,27 @@
 
 <body>
     <header>
-        <div class="jumbotron jumbotron-fluid" id="titulo">
-            <h1 class="text-center">SOLARITS</h1>
-        </div>
-        <div class="caixa">
-            <nav class="navbar navbar-expand-sm" id="navegacao">
-                <div class="collapse navbar-collapse">
-                    <div class="navbar-nav" id="links">
-                        <a class="nav-link text-warning" id="nav-item" href="/">Início</a>
-                        <a class="nav-link text-warning" id="nav-item" href="/proposta">Proposta</a>
-                        <a class="nav-link text-warning" id="nav-item2" href="/quemsomos">Quem Somos</a>
-                    </div>
-                </div>
+        <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
+          <div class="container">
+            <a href="#" class="navbar-brand">
+              <!-- Logo Image -->
+              <img src="https://cdn.discordapp.com/attachments/699712563176538182/855178255597174864/20210520_211529_0000.png" width="45" alt="" class="d-inline-block align-middle mr-2">
+              <!-- Logo Text -->
+              <span class="text-uppercase font-weight-bold">Solarits</span>
+            </a>
+
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a href="/" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="/quemsomos" class="nav-link">Quem Somos</a></li>
+                <li class="nav-item"><a href="/cadastro" class="nav-link">Login</a></li>
+              </ul>
+            </div>
+          </div>
         </nav>
-        </div>
+
     </header>
     <main>
       <div class="caixa2" id="cad">
@@ -100,7 +107,7 @@
       </div>
 </main>
 
-<footer class="bg-warning text-white text-center text-lg-start navbar-fixed-bottom">
+<footer class="bg-warning text-white text-center text-lg-start position-fixed fixed-bottom">
             <div class="container p-4" >
               <div class="row">
                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0">

@@ -9,12 +9,34 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="static/js/script.login.js"></script>
+    <script type="text/css" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script type="text/css" src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+    <script type="text/javascript" src="static/js/script.login.js"></script>
     <title>Login</title>
 </head>
 
 <body>
     <header>
+        <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
+          <div class="container">
+            <a href="#" class="navbar-brand">
+              <img src="https://cdn.discordapp.com/attachments/699712563176538182/855178255597174864/20210520_211529_0000.png" width="90" alt="" class="d-inline-block align-middle mr-2">
+              <span class="text-uppercase font-weight-bold">Solarits</span>
+            </a>
+
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+              <ul class="text-uppercase navbar-nav ml-auto">
+                <li class="nav-item"><a href="/" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="/quemsomos" class="nav-link">Quem Somos</a></li>
+                <li class="nav-item"><a href="/cadastro" class="nav-link">Cadastrar</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
         <div class="container">
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
@@ -26,21 +48,6 @@
                 {% endif %}
             {% endwith %}
         </div>
-        <div class="jumbotron jumbotron-fluid" id="titulo">
-            <h1 class="text-center">SOLARITS</h1>
-        </div>
-        <div class="caixa">
-            <nav class="navbar navbar-expand-sm" id="navegacao">
-                <div class="collapse navbar-collapse">
-                    <div class="navbar-nav" id="links">
-                        <a class="nav-link text-warning" id="nav-item" href="/">Início</a>
-                        <a class="nav-link text-warning" id="nav-item" href="/proposta">Proposta</a>
-                        <a class="nav-link text-warning" id="nav-item2" href="/quemsomos">Quem Somos</a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
     </header>
     <main>
     <div class="caixa2" id="log">
@@ -72,7 +79,7 @@
     </div>
       </div>
 </main>
-<footer class="bg-warning text-white text-center text-lg-start navbar-fixed-bottom">
+    <footer class="bg-warning text-white text-center text-lg-start position-fixed fixed-bottom">
             <div class="container p-4" >
               <div class="row">
                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
