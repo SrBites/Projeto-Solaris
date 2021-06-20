@@ -37,6 +37,14 @@
             <div class="jumbotron jumbotron-fluid bg-warning text-white rounded p-5 mb-5" id="titulo">
                {{rep | safe}}
            </div>
+            <div class="container mt-5">
+                <div class="jumbotron jumbotron-fluid mb-5" id="titulo">
+                    <h1 class="display-5 text-center">Empresas disponíveis na sua região</h1>
+                </div>
+                <div class="row mb-5">
+                    {{ empresas | safe }}
+                </div>
+            </div>
 
         </div>
     </main>
