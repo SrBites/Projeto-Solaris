@@ -51,17 +51,29 @@ def formCadastro():
 @app.route('/cadastracliente', methods=['POST'])
 def cadastraCliente():
     cad_c = cadastro.ContaCliente()
-    cad_c.cadastra()
-    flash('Cliente cadastrado com sucesso!')
+    if cad_c.cadastra() == False:
+        flash('Senha inválida! A senha deve conter:'
+              '* Ao menos 8 caracteres;'
+              '* Ao menos uma letra;'
+              '* Ao menos um número;'
+              '* Ao menos um caractere especial (_, @, $)')
+        return redirect(url_for('formCadastro'))
 
+    flash('Cliente cadastrado com sucesso!')
     return redirect(url_for('formLogin'))
 
 @app.route('/cadastraempresa', methods=['POST'])
 def cadastraEmpresa():
     cad_e = cadastro.ContaEmpresa()
-    cad_e.cadastra()
-    flash('Empresa cadastrada com sucesso!')
+    if cad_e.cadastra() == False:
+        flash('Senha inválida! A senha deve conter:'
+              '* Ao menos 8 caracteres;'
+              '* Ao menos uma letra;'
+              '* Ao menos um número;'
+              '* Ao menos um caractere especial (_, @, $)')
+        return redirect(url_for('formCadastro'))
 
+    flash('Empresa cadastrada com sucesso!')
     return redirect(url_for('formLogin'))
 
 #---LOGIN---

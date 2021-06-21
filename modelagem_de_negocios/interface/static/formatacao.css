@@ -2,8 +2,6 @@
   flex-grow: 3;
 }
 
-
-
 .caixa {
   display: flex;
   justify-content: center;
@@ -105,7 +103,6 @@ article.row div {
 
 #cadastrocliente, #logincliente, #loginempresa, #cadastroempresa {
   margin: 0 15px;
-  font-size: 13px;
 }
 
 #caixalogincliente, #caixaloginempresa , #caixasigninempresa, #caixasignincliente {
@@ -196,8 +193,10 @@ article.row div {
   }
 }
 
-
-
 .bg-cover {
     background-size: cover !important;
+}
+
+#linkindex {
+  margin-bottom: 30px;
 }

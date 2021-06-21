@@ -148,7 +148,7 @@ class Proposta:
             html += '<div class="d-flex justify-content-between install mt-3">'
             html += f'<span>Região: {regiao_atuacao}</span>'
             html += '<span class="text-primary">'
-            html += f'<a href="{url}">Link&nbsp;</a>'
+            html += f'<a href="{url}" class="text-warning">Link para a empresa&nbsp;</a>'
             html += '<i class="fa fa-angle-right"></i>'
             html += '</span>'
             html += '</div></div></div>'
