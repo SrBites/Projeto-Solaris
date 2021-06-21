@@ -120,7 +120,7 @@ def loginEmpresa():
     if log_e.loga():
         session['empresa_logada'] = log_e.getDados('user')
         flash(f"Olá, {session['empresa_logada']}! Login efetuado com sucesso!")
-        return redirect(url_for('indexsessionempresa'))
+        return render_template('indexsessionempresa.html')
 
     flash(f'Usuário ou senha incorretos, tente novamente')
     return redirect(url_for('formLogin'))
@@ -145,8 +145,14 @@ def logout():
 @app.route('/alterar')
 def alterar():
 
+    proposta = algoritmo.Proposta()
+    empresa = proposta.get_uma_empresa(session['empresa_logada'])
+    return render_template('alterar.html', empresa=empresa)
 
-    return render_template('alterar.html')
+@app.route('/alterarinformacoes', methods=['POST'])
+def alterardados():
+
+
 
 
 app.run()

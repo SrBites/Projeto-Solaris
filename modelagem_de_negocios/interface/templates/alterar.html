@@ -42,13 +42,13 @@
             <div class="card p-3">
                 <div class="d-flex flex-row mb-3">
                     <div class="d-flex flex-column ml-2">
-                        <span>Teste</span>
+                        <span>{{ empresa[0] }}</span>
                     </div>
                 </div>
-                <h6>Abdmael Cabusca</h6>
+                <h6>{{ empresa[3] }}</h6>
                 <div class="d-flex justify-content-between install mt-3">
-                    <span>Região: DF</span>
-                    <span><a class="text-warning" target="_blank" href="">Link para a empresa&nbsp;</a>
+                    <span>Região: {{ empresa[1] }}</span>
+                    <span><a class="text-warning" target="_blank" href="{{ empresa[2] }}">Link para a empresa&nbsp;</a>
                         <i class="fa fa-angle-right"></i>
                     </span>
                 </div>
@@ -66,13 +66,13 @@
                 <div class="card mt-2 mx-auto p-4 bg-warning">
                     <div class="card-body">
                         <div class="container">
-                            <form id="contact-form" role="form">
+                            <form id="contact-form" action="/alterarinformacoes">
                                 <div class="controls">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="form_name" class="text-white">Nome</label>
-                                                <input id="form_name" value="{{nome}}" name="name" class="form-control" required="required">
+                                                <input id="form_name" value="{{ empresa[0] }}" name="name" class="form-control" required="required">
                                             </div>
                                         </div>
                                     </div>
@@ -80,14 +80,14 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="form_email" class="text-white">Url</label>
-                                                <input id="form_email" name="email" value="{{url}}" class="form-control" required="required">
+                                                <input id="form_email" name="email" value="{{ empresa[2] }}" class="form-control" required="required">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="form_need" class="text-white">Mudar a região</label>
                                                 <select name="atuacao" id="atuacao" class="form-select" required>
-                                                <option selected>{{regiao}}</option>
+                                                <option selected>{{ empresa[1] }}</option>
                                                 <option>AC</option>>
                                                 <option>AL</option>>
                                                 <option>AP</option>>
@@ -121,10 +121,12 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="form_message" class="text-white">Descrição</label>
-                                                <textarea id="form_message"  name="message" class="form-control" rows="4" required="required">{{descricao}}</textarea>
+                                                <textarea id="form_message"  name="message" class="form-control" rows="4" required="required">{{ empresa[3] }}</textarea>
                                             </div>
                                         </div>
-                                        <div class="col-md-12 mt-3"> <input type="submit" class="btn btn-primary btn-send pt-2 btn-block " value="Alterar"> </div>
+                                        <div class="col-md-12 mt-3">
+                                            <input type="submit" class="btn btn-primary btn-send pt-2 btn-block " value="Alterar">
+                                        </div>
                                     </div>
                                 </div>
                                 </div>
