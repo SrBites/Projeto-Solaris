@@ -49,7 +49,6 @@ class LoginEmpresa:
 
         try:
             if username in validaLogin and password in validaLogin:
-                print(verificaLogin[0])
                 return True
         except:
             return False
