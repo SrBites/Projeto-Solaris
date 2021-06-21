@@ -130,13 +130,22 @@ class Proposta:
         return [solar, estado]
 
 
+    def get_uma_empresa(self, nme):
+        nome_empresa = nme
+        mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
+        cmd = 'SELECT nme_empresa, regiao_atuacao, url, descricao FROM tb_conta_empresa WHERE nme_empresa=%s'
+        cs = mysql.consultar(cmd, [nome_empresa])
+        informacoes = cs.fetchone()
+        return informacoes
+
+
     def getEmpresas(self, sgl):
         sgl_estado = sgl
         mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
-        cmd = 'SELECT nme_empresa, regiao_atuacao, url FROM tb_conta_empresa WHERE regiao_atuacao=%s'
+        cmd = 'SELECT nme_empresa, regiao_atuacao, url, descricao FROM tb_conta_empresa WHERE regiao_atuacao=%s'
         cs = mysql.consultar(cmd, [sgl_estado])
         html = ''
-        for [nme, regiao_atuacao, url] in cs:
+        for [nme, regiao_atuacao, url, descricao] in cs:
             html += '<div class="col-md-4 mt-3 mb-3">'
             html += '<div class="card p-3">'
             html += '<div class="d-flex flex-row mb-3">'
@@ -144,7 +153,7 @@ class Proposta:
             html += f'<span>{nme}</span>'
             html += '</div>'
             html += '</div>'
-            html += '<h6>Abdmael Cabusca</h6>'
+            html += f'<h6>{descricao}</h6>'
             html += '<div class="d-flex justify-content-between install mt-3">'
             html += f'<span>Região: {regiao_atuacao}</span>'
             html += '<span class="text-primary">'
