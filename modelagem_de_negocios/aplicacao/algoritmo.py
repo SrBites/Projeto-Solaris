@@ -130,6 +130,7 @@ class Proposta:
         return [solar, estado]
 
 
+
     def getEmpresas(self, sgl):
         sgl_estado = sgl
         mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')

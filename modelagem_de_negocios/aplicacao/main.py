@@ -14,6 +14,7 @@ rota = pathing.Path()
 app = Flask(__name__, template_folder=rota.templateWay(), static_folder=rota.staticWay())
 app.secret_key = 'ventodonorte'
 
+
 @app.route('/')
 def index():
     if session['usuario_logado'] != None:
@@ -21,18 +22,21 @@ def index():
 
     return render_template('index.html')
 
-#---FUNCIONALIDADES---
+
+# ---FUNCIONALIDADES---
 @app.route('/quemsomos')
 def quemSomos():
     return render_template('quemsomos.html')
 
-#---PROPOSTA---
+
+# ---PROPOSTA---
 @app.route('/proposta')
 def proposta():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         flash('Voce deve estar logado para acessar esta função')
         return redirect(url_for('formLogin'))
     return render_template('algoritmo.html')
+
 
 @app.route('/geraproposta', methods=['POST'])
 def geraProposta():
@@ -43,10 +47,12 @@ def geraProposta():
     empresas = proposta.getEmpresas(sgl)
     return render_template('proposta.html', rep=res, empresas=empresas)
 
-#---CADASTRO---
+
+# ---CADASTRO---
 @app.route('/cadastro')
 def formCadastro():
     return render_template('cadastro.html')
+
 
 @app.route('/cadastracliente', methods=['POST'])
 def cadastraCliente():
@@ -65,6 +71,7 @@ def cadastraCliente():
 
     flash('Cliente cadastrado com sucesso!')
     return redirect(url_for('formLogin'))
+
 
 @app.route('/cadastraempresa', methods=['POST'])
 def cadastraEmpresa():
@@ -85,10 +92,12 @@ def cadastraEmpresa():
     flash('Empresa cadastrada com sucesso!')
     return redirect(url_for('formLogin'))
 
-#---LOGIN---
+
+# ---LOGIN---
 @app.route('/login')
 def formLogin():
     return render_template('login.html')
+
 
 @app.route('/logincliente', methods=['POST'])
 def loginCliente():
@@ -103,19 +112,21 @@ def loginCliente():
     flash('Usuário ou senha incorretos, tente novamente')
     return redirect(url_for('formLogin'))
 
+
 @app.route('/loginempresa', methods=['POST'])
 def loginEmpresa():
     log_e = login.LoginEmpresa()
 
     if log_e.loga():
-        session['usuario_logado'] = log_e.getDados('user')
-        flash(f"Olá, {session['usuario_logado']}! Login efetuado com sucesso!")
-        return redirect(url_for('index'))
+        session['empresa_logada'] = log_e.getDados('user')
+        flash(f"Olá, {session['empresa_logada']}! Login efetuado com sucesso!")
+        return redirect(url_for('indexsessionempresa'))
 
     flash(f'Usuário ou senha incorretos, tente novamente')
     return redirect(url_for('formLogin'))
 
-#---LOGOUT---
+
+# ---LOGOUT---
 @app.route('/logout')
 def logout():
     if session['usuario_logado'] == None:
@@ -123,9 +134,19 @@ def logout():
         return redirect(url_for('index'))
 
     session['usuario_logado'] = None
+    session['empresa_logada'] = None
     session['cep'] = None
     flash('Usuário deslogado, faça o login novamente para ter acesso a todas funcionalidades do site')
 
     return redirect(url_for('index'))
+
+
+# ---ALTERAR---
+@app.route('/alterar')
+def alterar():
+
+
+    return render_template('alterar.html')
+
 
 app.run()
