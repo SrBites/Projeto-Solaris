@@ -38,7 +38,10 @@ def proposta():
 def geraProposta():
     proposta = algoritmo.Proposta()
     res = proposta.calculo(session['cep'])
-    return render_template('proposta.html', rep=res)
+    validacao = proposta.validacaoCEP(session['cep'])
+    sgl = validacao[1]
+    empresas = proposta.getEmpresas(sgl)
+    return render_template('proposta.html', rep=res, empresas=empresas)
 
 #---CADASTRO---
 @app.route('/cadastro')
