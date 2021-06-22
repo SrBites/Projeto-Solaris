@@ -17,10 +17,15 @@ app.secret_key = 'ventodonorte'
 
 @app.route('/')
 def index():
-    if session['usuario_logado'] != None:
-        return render_template('indexsession.html')
-
+    session['usuario_logado'] = None
     return render_template('index.html')
+
+
+@app.route('/index')
+def indexlogado():
+    if session['usuario_logado'] == None:
+        return redirect(url_for(index))
+    return render_template('indexsession.html')
 
 
 # ---FUNCIONALIDADES---
@@ -149,10 +154,10 @@ def alterar():
     empresa = proposta.get_uma_empresa(session['empresa_logada'])
     return render_template('alterar.html', empresa=empresa)
 
+'''
 @app.route('/alterarinformacoes', methods=['POST'])
-def alterardados():
-
-
+    def alterardados():
+'''
 
 
 app.run()
