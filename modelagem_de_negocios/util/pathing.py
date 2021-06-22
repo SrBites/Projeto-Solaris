@@ -1,5 +1,4 @@
 import os
-
 class Path:
     def templateWay(self):
         template_dir = os.path.dirname(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))

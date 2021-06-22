@@ -1,3 +1,7 @@
+.main {
+  flex-grow: 3;
+}
+
 .caixa {
   display: flex;
   justify-content: center;
@@ -34,6 +38,7 @@ body {
   background: #fff;
   padding: 40px 0px 80px;
 }
+
 
 
 #caixa1 h1 {
@@ -78,6 +83,7 @@ article.row div {
 
 #navegacao {
     color: #888888;
+    margin-left: 15px;
 }
 
 #nav-item {
@@ -86,16 +92,20 @@ article.row div {
     
 }
 
+#nav-item2 {
+    font-size: 21px;
+    margin: 0 5px;
+}
+
 #cad {
   margin-bottom: 30px;
 }
 
-#cadastrocliente, #cadastroempresa {
+#cadastrocliente, #logincliente, #loginempresa, #cadastroempresa {
   margin: 0 15px;
-  font-size: 13px;
 }
 
-#caixalogin, #caixasigninempresa, #caixasignincliente {
+#caixalogincliente, #caixaloginempresa , #caixasigninempresa, #caixasignincliente {
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -133,12 +143,8 @@ article.row div {
 .form-login, .form-signin  .form-control:focus {
   z-index: 2;
 }
-.form-login, .form-signin  input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-login, .form-signin  input[type="password"] {
+
+.form-login, .form-signin  input {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -148,15 +154,9 @@ article.row div {
   margin: 5px 0;
 }
 
-<<<<<<< HEAD
-=======
-#footer {
-  position: absolute;
-  bottom: 0;
 
-}
 
->>>>>>> 97dd1033af0a8ce988615d4ff72c05e6fd680adc
+
 @media (max-width: 600px) {
   article.row div {
     min-width: 300px;
@@ -191,4 +191,12 @@ article.row div {
     -moz-box-ordinal-group: 2;
     box-ordinal-group: 2;
   }
+}
+
+.bg-cover {
+    background-size: cover !important;
+}
+
+#linkindex {
+  margin-bottom: 30px;
 }
