@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/static/formatacao.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script type="text/css" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"></script>
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <script type="text/css"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script type="text/css" src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script type="text/css"
+        src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,42 +21,43 @@
 
 <body>
     <header>
-        <div style="background: url(https://images.unsplash.com/photo-1623005399662-b55f006328c2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1104&q=80.png)" class="jumbotron bg-cover text-white mb-0">
+        <div style="background: url(https://images.unsplash.com/photo-1623005399662-b55f006328c2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1104&q=80.png)"
+            class="jumbotron bg-cover text-white mb-0">
             <div class="container py-5 text-center">
                 <h1 class="display-4 font-weight-bold">SOLARITS</h1>
                 <p class="font-italic mb-0">Site voltado à empresas e pessoas interessadas em energia solar.</p>
             </div>
             <div class="caixa">
-                        <p class="mr-3 font-italic">
-                            <a href="/" class="text-white">
-                                <u>Início</u>
-                            </a>
-                        </p>
-                        <p class="mr-3 font-italic">
-                            <a href="/quemsomos" class="text-white">
-                                <u>Quem Somos</u>
-                            </a>
-                        </p>
-                        <p class="font-italic">
-                            <a href="/alterar" class="text-white">
-                                <u>Alterar</u>
-                            </a>
-                        </p>
+                <p class="mr-3 font-italic">
+                    <a href="/index" class="text-white">
+                        <u>Início</u>
+                    </a>
+                </p>
+                <p class="mr-3 font-italic">
+                    <a href="/quemsomos" class="text-white">
+                        <u>Quem Somos</u>
+                    </a>
+                </p>
+                <p class="font-italic">
+                    <a href="/alterar" class="text-white">
+                        <u>Alterar</u>
+                    </a>
+                </p>
             </div>
-            <div class="caixa2" >
+            <div class="caixa2">
                 <a href="/logout"><button type="button" class="btn btn-warning" id="logcad">Logout</button></a>
                 <a href="/cadastro"><button type="button" class="btn btn-warning" id="logcad">Cadastro</button></a>
             </div>
         </div>
         <div class="container text-center">
             {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    <ul id="messages" class="list-unstyled">
-                    {% for message in messages %}
-                        <li class="alert alert-success">{{ message }}</li>
-                    {% endfor %}
-                    </ul>
-                {% endif %}
+            {% if messages %}
+            <ul id="messages" class="list-unstyled">
+                {% for message in messages %}
+                <li class="alert alert-success">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
             {% endwith %}
         </div>
     </header>
@@ -60,74 +65,97 @@
         <div id="caixa1">
             <h1>Ultimas Noticias:</h1>
             <article class="row" id="textoimagem">
-                <div><img src="https://s2.glbimg.com/A-dpICsSkF7oTaYTBFts7y_xJSw=/0x0:1280x958/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/i/T/o7AzoNQ4ilVvxo9cL2Ig/whatsapp-image-2021-06-08-at-11.14.28-1-.jpeg" /></div>
+                <div><img
+                        src="https://s2.glbimg.com/A-dpICsSkF7oTaYTBFts7y_xJSw=/0x0:1280x958/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/i/T/o7AzoNQ4ilVvxo9cL2Ig/whatsapp-image-2021-06-08-at-11.14.28-1-.jpeg" />
+                </div>
                 <div>
                     <h3>Política</h3>
-                    <p>Manifestantes montam painel de energia solar no gramado do Congresso Nacional para pedir regulamentação no setor.</p>
-                    <a href="https://g1.globo.com/df/distrito-federal/noticia/2021/06/08/manifestantes-montam-painel-de-energia-solar-no-gramado-do-congresso-nacional-para-pedir-pagamento-de-impostos-no-setor.ghtml" target="_blank">Link to read more</a>
+                    <p>Manifestantes montam painel de energia solar no gramado do Congresso Nacional para pedir
+                        regulamentação no setor.</p>
+                    <a href="https://g1.globo.com/df/distrito-federal/noticia/2021/06/08/manifestantes-montam-painel-de-energia-solar-no-gramado-do-congresso-nacional-para-pedir-pagamento-de-impostos-no-setor.ghtml"
+                        target="_blank">Link to read more</a>
                 </div>
             </article>
             <article class="row" id="textoimagem">
                 <div>
                     <h3>Brasil</h3>
                     <p>superamos 500 mil conexões de energia solar de geração própria.</p>
-                    <a target="_blank" href="https://economia.uol.com.br/noticias/reuters/2021/06/16/brasil-supera-500-mil-conexoes-de-energia-solar-de-geracao-propria-diz-associacao.htm">Link to read more</a>
+                    <a target="_blank"
+                        href="https://economia.uol.com.br/noticias/reuters/2021/06/16/brasil-supera-500-mil-conexoes-de-energia-solar-de-geracao-propria-diz-associacao.htm">Link
+                        to read more</a>
                 </div>
-                <div><img src="https://cdn.discordapp.com/attachments/293857942824943617/854830284118032434/futuro-da-energia-solar-no-brasil-1.png" /></div>
+                <div><img
+                        src="https://cdn.discordapp.com/attachments/293857942824943617/854830284118032434/futuro-da-energia-solar-no-brasil-1.png" />
+                </div>
             </article>
             <article class="row" id="textoimagem">
-                <div><img src="https://media.discordapp.net/attachments/293857942824943617/854829597395517480/Valor-adicional-da-conta-de-luz-sobe-3648-em-menos-de-dois-meses-1.png" /></div>
+                <div><img
+                        src="https://media.discordapp.net/attachments/293857942824943617/854829597395517480/Valor-adicional-da-conta-de-luz-sobe-3648-em-menos-de-dois-meses-1.png" />
+                </div>
                 <div>
                     <h3>Economia</h3>
                     <p>Valor adicional da conta de luz sobe 364,8% em menos de dois meses.</p>
-                    <a target="_blank" href="https://canalsolar.com.br/valor-adicional-da-conta-de-luz-sobe-3648-em-menos-de-dois-meses/">Link to read more</a>
+                    <a target="_blank"
+                        href="https://canalsolar.com.br/valor-adicional-da-conta-de-luz-sobe-3648-em-menos-de-dois-meses/">Link
+                        to read more</a>
                 </div>
             </article>
 
         </div>
     </main>
-        <footer class="bg-warning text-white text-center text-lg-start nav-fixed-bottom">
-            <div class="container p-4" >
-              <div class="row">
+    <footer class="bg-warning text-white text-center text-lg-start nav-fixed-bottom">
+        <div class="container p-4">
+            <div class="footer row">
                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">Footer Content</h5>
-
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                    molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-                    voluptatem veniam, est atque cumque eum delectus sint!
-                  </p>
+                    <h5 class="text-uppercase">Contatos</h5>
+                    <ul class="icones-sociais row" style="margin-right: 10px">
+                        <div style="margin-right: 40px">
+                            <li><a href="https://twitter.com/PSolarits" target="_blank" class=""><i
+                                        class="ri-twitter-line text-dark"><link href='https://css.gg/add-r.css' rel='stylesheet'></i></a></li>
+                            <li><a href="https://www.facebook.com/Projeto-Solarits-110064387986933" target="_blank"><i
+                                        class="ri-facebook-box-line text-dark"></i></a></li>
+                        </div>
+                        <div>
+                            <li><a href="https://www.instagram.com/projeto_solarits/" target="_blank"><i
+                                        class="ri-instagram-line text-dark"></i></a></li>
+                            <li><a href="mailto:projetosolarits@gmail.com" target="_blank"><i
+                                        class="ri-mail-send-line text-dark"></i></i></a></li>
+                        </div>
+                    </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">Links</h5>
+                    <h5 class="text-uppercase">Links</h5>
 
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="https://github.com/Robis123/Projeto-Solaris" target="_blank" class="text-white text-decoration-none">Github</a>
-                    </li>
-                    <li>
-                      <a href="http://www.cresesb.cepel.br/index.php?section=sundata" target="_blank" class="text-white text-decoration-none">Cresesb</a>
-                    </li>
-                  </ul>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="https://github.com/Robis123/Projeto-Solaris" target="_blank"
+                                class="text-dark text-decoration-none">Github</a>
+                        </li>
+                        <li>
+                            <a href="http://www.cresesb.cepel.br/index.php?section=sundata" target="_blank"
+                                class="text-dark text-decoration-none">Cresesb</a>
+                        </li>
+                    </ul>
                 </div>
-                  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">Links</h5>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
 
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="http://www.gsep.ene.unb.br/producao/marco/sbpe_2006.pdf" target="_blank" class="text-white text-decoration-none">Gsep</a>
-                    </li>
-                    <li>
-                      <a href="/quemsomos" class="text-white text-decoration-none">Quem somos</a>
-                    </li>
-                  </ul>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="http://www.gsep.ene.unb.br/producao/marco/sbpe_2006.pdf" target="_blank"
+                                class="text-dark text-decoration-none">Gsep</a>
+                        </li>
+                        <li>
+                            <a href="/quemsomos" class="text-dark text-decoration-none">Quem somos</a>
+                        </li>
+                    </ul>
                 </div>
-      </div>
-    </div>
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2021 Copyright: Solarits
-    </div>
-  </footer>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright: Solarits
+        </div>
+    </footer>
 </body>
 
 </html>

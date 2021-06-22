@@ -9,11 +9,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script type="text/css" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <script type="text/css"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script type="text/css" src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="static/js/script.login.js"></script>
+
     <title>Login</title>
 </head>
 
@@ -22,104 +25,122 @@
         <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
 
             <a href="#" class="navbar-brand" style="margin-left: 150px;" id="logo">
-              <img src="https://cdn.discordapp.com/attachments/699712563176538182/855178255597174864/20210520_211529_0000.png" width="90" alt="" class="d-inline-block align-middle mr-2">
-              <span class="text-uppercase font-weight-bold">Solarits</span>
+                <img src="https://cdn.discordapp.com/attachments/699712563176538182/855178255597174864/20210520_211529_0000.png"
+                    width="90" alt="" class="d-inline-block align-middle mr-2">
+                <span class="text-uppercase font-weight-bold">Solarits</span>
             </a>
 
-            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
 
-            <div id="navbarSupportedContent" style="margin-left: 700px;" class="collapse navbar-collapse justify-content-around">
-              <ul class="navbar-nav">
-                <li class="nav-item text-uppercase"><a href="/" class="nav-link">Início</a></li>
-                <li class="nav-item text-uppercase"><a href="/quemsomos" class="nav-link">Quem Somos</a></li>
-                <li class="nav-item text-uppercase"><a href="/cadastro" class="nav-link">Cadastrar</a></li>
-              </ul>
+            <div id="navbarSupportedContent" style="margin-left: 700px;"
+                class="collapse navbar-collapse justify-content-around">
+                <ul class="navbar-nav">
+                    <li class="nav-item text-uppercase"><a href="/index" class="nav-link">Início</a></li>
+                    <li class="nav-item text-uppercase"><a href="/quemsomos" class="nav-link">Quem Somos</a></li>
+                    <li class="nav-item text-uppercase"><a href="/cadastro" class="nav-link">Cadastrar</a></li>
+                </ul>
             </div>
 
         </nav>
         <div class="container text-center">
             {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    <ul id="messages" class="list-unstyled">
-                    {% for message in messages %}
-                        <li class="alert alert-success">{{ message }}</li>
-                    {% endfor %}
-                    </ul>
-                {% endif %}
+            {% if messages %}
+            <ul id="messages" class="list-unstyled">
+                {% for message in messages %}
+                <li class="alert alert-success">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
             {% endwith %}
         </div>
     </header>
     <main>
-    <div class="caixa" id="log">
-        <button type="button" class="btn btn-warning" id="logincliente">Login de cliente</button>
-        <button type="button" class="btn btn-warning" id="loginempresa">Login de empresa</button>
-    </div>
-    <div class="cliente">
-    <div class="text-center" id="caixalogincliente">
-    <form action="/logincliente" method="post" class="form-login" id="logincliente">
-        <label for="inputUser" class="sr-only" id="inpute">Usuário*</label>
-        <input type="text" name="nme_cliente" id="inputc" class="form-control" placeholder="Nome de Usuário" required autofocus>
-        <label for="inputPassword" class="sr-only" id="inputp">Senha*</label>
-        <input type="password" name="senha" id="inputp" class="form-control" placeholder="Senha" required>
-        <button class="btn btn-lg btn-warning" type="submit" id="entrar">Entrar</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
-      </form>
-    </div>
-    </div>
-    <div class="empresa">
-    <div class="text-center" id="caixaloginempresa">
-      <form action="/loginempresa" method="post" class="form-login" id="loginempresa">
-          <label for="inputUser" class="sr-only" id="inputc" >Usuário da Empresa*</label>
-          <input type="text" name="nme_empresa" id="inpute" class="form-control" placeholder="Nome da Empresa" required autofocus>
-          <label for="inputPassword" class="sr-only" id="inputp">Senha*</label>
-          <input type="password" name="senha" id="inputp" class="form-control" placeholder="Senha" required>
-          <button class="btn btn-lg btn-warning" type="submit" id="entrar">Entrar</button>
-          <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
-        </form>
-    </div>
-      </div>
-</main>
-    <footer class="bg-warning text-white text-center text-lg-start">
-            <div class="container p-4" >
-              <div class="row">
+        <div class="caixa" id="log">
+            <button type="button" class="btn btn-warning" id="logincliente">Login de cliente</button>
+            <button type="button" class="btn btn-warning" id="loginempresa">Login de empresa</button>
+        </div>
+        <div class="cliente">
+            <div class="text-center" id="caixalogincliente">
+                <form action="/logincliente" method="post" class="form-login" id="logincliente">
+                    <label for="inputUser" class="sr-only" id="inpute">Usuário*</label>
+                    <input type="text" name="nme_cliente" id="inputc" class="form-control" placeholder="Nome de Usuário"
+                        required autofocus>
+                    <label for="inputPassword" class="sr-only" id="inputp">Senha*</label>
+                    <input type="password" name="senha" id="inputp" class="form-control" placeholder="Senha" required>
+                    <button class="btn btn-lg btn-warning" type="submit" id="entrar">Entrar</button>
+                    <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+                </form>
+            </div>
+        </div>
+        <div class="empresa">
+            <div class="text-center" id="caixaloginempresa">
+                <form action="/loginempresa" method="post" class="form-login" id="loginempresa">
+                    <label for="inputUser" class="sr-only" id="inputc">Usuário da Empresa*</label>
+                    <input type="text" name="nme_empresa" id="inpute" class="form-control" placeholder="Nome da Empresa"
+                        required autofocus>
+                    <label for="inputPassword" class="sr-only" id="inputp">Senha*</label>
+                    <input type="password" name="senha" id="inputp" class="form-control" placeholder="Senha" required>
+                    <button class="btn btn-lg btn-warning" type="submit" id="entrar">Entrar</button>
+                    <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-warning text-white text-center text-lg-start nav-fixed-bottom">
+        <div class="container p-4">
+            <div class="footer row">
                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">Footer Content</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                    molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-                    voluptatem veniam, est atque cumque eum delectus sint!
-                  </p>
+                    <h5 class="text-uppercase">Contatos</h5>
+                    <ul class="icones-sociais row" style="margin-right: 10px">
+                        <div style="margin-right: 40px">
+                            <li><a href="https://twitter.com/PSolarits" target="_blank" class=""><i
+                                        class="ri-twitter-line text-dark"><link href='https://css.gg/add-r.css' rel='stylesheet'></i></a></li>
+                            <li><a href="https://www.facebook.com/Projeto-Solarits-110064387986933" target="_blank"><i
+                                        class="ri-facebook-box-line text-dark"></i></a></li>
+                        </div>
+                        <div>
+                            <li><a href="https://www.instagram.com/projeto_solarits/" target="_blank"><i
+                                        class="ri-instagram-line text-dark"></i></a></li>
+                            <li><a href="mailto:projetosolarits@gmail.com" target="_blank"><i
+                                        class="ri-mail-send-line text-dark"></i></i></a></li>
+                        </div>
+                    </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">Links</h5>
+                    <h5 class="text-uppercase">Links</h5>
 
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="https://github.com/Robis123/Projeto-Solaris" target="_blank" class="text-white text-decoration-none">Github</a>
-                    </li>
-                    <li>
-                      <a href="http://www.cresesb.cepel.br/index.php?section=sundata" target="_blank" class="text-white text-decoration-none">Cresesb</a>
-                    </li>
-                  </ul>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="https://github.com/Robis123/Projeto-Solaris" target="_blank"
+                                class="text-dark text-decoration-none">Github</a>
+                        </li>
+                        <li>
+                            <a href="http://www.cresesb.cepel.br/index.php?section=sundata" target="_blank"
+                                class="text-dark text-decoration-none">Cresesb</a>
+                        </li>
+                    </ul>
                 </div>
-                  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">Links</h5>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
 
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="http://www.gsep.ene.unb.br/producao/marco/sbpe_2006.pdf" target="_blank" class="text-white text-decoration-none">Gsep</a>
-                    </li>
-                    <li>
-                      <a href="/quemsomos" class="text-white text-decoration-none">Quem somos</a>
-                    </li>
-                  </ul>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="http://www.gsep.ene.unb.br/producao/marco/sbpe_2006.pdf" target="_blank"
+                                class="text-dark text-decoration-none">Gsep</a>
+                        </li>
+                        <li>
+                            <a href="/quemsomos" class="text-dark text-decoration-none">Quem somos</a>
+                        </li>
+                    </ul>
                 </div>
-      </div>
-    </div>
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2021 Copyright: Solarits
-    </div>
-  </footer>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright: Solarits
+        </div>
+    </footer>
 </body>
 
 </html>

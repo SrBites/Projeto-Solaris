@@ -9,7 +9,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
     <script src="static/script.js"></script>
+
     <title>Alterar</title>
 
 </head>
@@ -18,19 +20,23 @@
     <header>
         <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
             <a href="#" class="navbar-brand" style="margin-left: 150px;" id="logo">
-              <img src="https://cdn.discordapp.com/attachments/699712563176538182/855178255597174864/20210520_211529_0000.png" width="90" alt="" class="d-inline-block align-middle mr-2">
-              <span class="text-uppercase font-weight-bold">Solarits</span>
+                <img src="https://cdn.discordapp.com/attachments/699712563176538182/855178255597174864/20210520_211529_0000.png"
+                    width="90" alt="" class="d-inline-block align-middle mr-2">
+                <span class="text-uppercase font-weight-bold">Solarits</span>
             </a>
 
-            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
 
-            <div id="navbarSupportedContent" style="margin-left: 500px;" class="collapse navbar-collapse justify-content-around">
-              <ul class="navbar-nav">
-                <li class="nav-item text-uppercase"><a href="/" class="nav-link">Início</a></li>
-                <li class="nav-item text-uppercase"><a href="/quemsomos" class="nav-link">Quem Somos</a></li>
-                <li class="nav-item text-uppercase"><a href="/login" class="nav-link">Login</a></li>
-                <li class="nav-item text-uppercase"><a href="/cadastro" class="nav-link">Cadastro</a></li>
-              </ul>
+            <div id="navbarSupportedContent" style="margin-left: 500px;"
+                class="collapse navbar-collapse justify-content-around">
+                <ul class="navbar-nav">
+                    <li class="nav-item text-uppercase"><a href="/index" class="nav-link">Início</a></li>
+                    <li class="nav-item text-uppercase"><a href="/quemsomos" class="nav-link">Quem Somos</a></li>
+                    <li class="nav-item text-uppercase"><a href="/login" class="nav-link">Login</a></li>
+                    <li class="nav-item text-uppercase"><a href="/cadastro" class="nav-link">Cadastro</a></li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -38,28 +44,29 @@
     <main>
 
         <div class="d-flex justify-content-center">
-        <div class="col-md-4">
-            <div class="card p-3">
-                <div class="d-flex flex-row mb-3">
-                    <div class="d-flex flex-column ml-2">
-                        <span>{{ empresa[0] }}</span>
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <div class="d-flex flex-row mb-3">
+                        <div class="d-flex flex-column ml-2">
+                            <span>{{ empresa[0] }}</span>
+                        </div>
                     </div>
-                </div>
-                <h6>{{ empresa[3] }}</h6>
-                <div class="d-flex justify-content-between install mt-3">
-                    <span>Região: {{ empresa[1] }}</span>
-                    <span><a class="text-warning" target="_blank" href="{{ empresa[2] }}">Link para a empresa&nbsp;</a>
-                        <i class="fa fa-angle-right"></i>
-                    </span>
+                    <h6>{{ empresa[3] }}</h6>
+                    <div class="d-flex justify-content-between install mt-3">
+                        <span>Região: {{ empresa[1] }}</span>
+                        <span><a class="text-warning" target="_blank" href="{{ empresa[2] }}">Link para a
+                                empresa&nbsp;</a>
+                            <i class="fa fa-angle-right"></i>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
 
         <div class="container">
-           <div class="jumbotron jumbotron-fluid p-5 mb-2" id="titulo">
-               <h1 class="display-4 text-center">Formulário de alteração</h1>
-           </div>
+            <div class="jumbotron jumbotron-fluid p-5 mb-2" id="titulo">
+                <h1 class="display-4 text-center">Formulário de alteração</h1>
+            </div>
         </div>
         <div class="row mb-5">
             <div class="col-lg-7 mx-auto">
@@ -72,7 +79,8 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="form_name" class="text-white">Nome</label>
-                                                <input id="form_name" value="{{ empresa[0] }}" name="name" class="form-control" required="required">
+                                                <input id="form_name" value="{{ empresa[0] }}" name="name"
+                                                    class="form-control" required="required">
                                             </div>
                                         </div>
                                     </div>
@@ -80,55 +88,58 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="form_email" class="text-white">Url</label>
-                                                <input id="form_email" name="email" value="{{ empresa[2] }}" class="form-control" required="required">
+                                                <input id="form_email" name="email" value="{{ empresa[2] }}"
+                                                    class="form-control" required="required">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="form_need" class="text-white">Mudar a região</label>
                                                 <select name="atuacao" id="atuacao" class="form-select" required>
-                                                <option selected>{{ empresa[1] }}</option>
-                                                <option>AC</option>>
-                                                <option>AL</option>>
-                                                <option>AP</option>>
-                                                <option>AM</option>>
-                                                <option>BA</option>>
-                                                <option>CE</option>>
-                                                <option>DF</option>>
-                                                <option>ES</option>>
-                                                <option>GO</option>>
-                                                <option>MA</option>>
-                                                <option>MT</option>>
-                                                <option>MS</option>>
-                                                <option>MG</option>>
-                                                <option>PA</option>>
-                                                <option>PB</option>>
-                                                <option>PR</option>>
-                                                <option>PE</option>>
-                                                <option>PI</option>>
-                                                <option>RJ</option>>
-                                                <option>RN</option>>
-                                                <option>RS</option>>
-                                                <option>RR</option>>
-                                                <option>SC</option>>
-                                                <option>SP</option>>
-                                                <option>SE</option>>
-                                                <option>TO</option>>
-                                              </select>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="form_message" class="text-white">Descrição</label>
-                                                <textarea id="form_message"  name="message" class="form-control" rows="4" required="required">{{ empresa[3] }}</textarea>
+                                                    <option selected>{{ empresa[1] }}</option>
+                                                    <option>AC</option>>
+                                                    <option>AL</option>>
+                                                    <option>AP</option>>
+                                                    <option>AM</option>>
+                                                    <option>BA</option>>
+                                                    <option>CE</option>>
+                                                    <option>DF</option>>
+                                                    <option>ES</option>>
+                                                    <option>GO</option>>
+                                                    <option>MA</option>>
+                                                    <option>MT</option>>
+                                                    <option>MS</option>>
+                                                    <option>MG</option>>
+                                                    <option>PA</option>>
+                                                    <option>PB</option>>
+                                                    <option>PR</option>>
+                                                    <option>PE</option>>
+                                                    <option>PI</option>>
+                                                    <option>RJ</option>>
+                                                    <option>RN</option>>
+                                                    <option>RS</option>>
+                                                    <option>RR</option>>
+                                                    <option>SC</option>>
+                                                    <option>SP</option>>
+                                                    <option>SE</option>>
+                                                    <option>TO</option>>
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-12 mt-3">
-                                            <input type="submit" class="btn btn-primary btn-send pt-2 btn-block " value="Alterar">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="form_message" class="text-white">Descrição</label>
+                                                    <textarea id="form_message" name="message" class="form-control"
+                                                        rows="4" required="required">{{ empresa[3] }}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mt-3">
+                                                <input type="submit" class="btn btn-primary btn-send pt-2 btn-block "
+                                                    value="Alterar">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 </div>
                             </form>
                         </div>
@@ -138,48 +149,59 @@
         </div>
 
     </main>
-    <footer class="bg-warning text-white text-center text-lg-start">
-            <div class="container p-4" >
-              <div class="row">
+    <footer class="bg-warning text-white text-center text-lg-start nav-fixed-bottom">
+        <div class="container p-4">
+            <div class="footer row">
                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">Footer Content</h5>
-
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                    molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-                    voluptatem veniam, est atque cumque eum delectus sint!
-                  </p>
+                    <h5 class="text-uppercase">Contatos</h5>
+                    <ul class="icones-sociais row" style="margin-right: 10px">
+                        <div style="margin-right: 40px">
+                            <li><a href="https://twitter.com/PSolarits" target="_blank" class=""><i
+                                        class="ri-twitter-line text-dark"><link href='https://css.gg/add-r.css' rel='stylesheet'></i></a></li>
+                            <li><a href="https://www.facebook.com/Projeto-Solarits-110064387986933" target="_blank"><i
+                                        class="ri-facebook-box-line text-dark"></i></a></li>
+                        </div>
+                        <div>
+                            <li><a href="https://www.instagram.com/projeto_solarits/" target="_blank"><i
+                                        class="ri-instagram-line text-dark"></i></a></li>
+                            <li><a href="mailto:projetosolarits@gmail.com" target="_blank"><i
+                                        class="ri-mail-send-line text-dark"></i></i></a></li>
+                        </div>
+                    </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">Links</h5>
+                    <h5 class="text-uppercase">Links</h5>
 
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="https://github.com/Robis123/Projeto-Solaris" target="_blank" class="text-white text-decoration-none">Github</a>
-                    </li>
-                    <li>
-                      <a href="http://www.cresesb.cepel.br/index.php?section=sundata" target="_blank" class="text-white text-decoration-none">Cresesb</a>
-                    </li>
-                  </ul>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="https://github.com/Robis123/Projeto-Solaris" target="_blank"
+                                class="text-dark text-decoration-none">Github</a>
+                        </li>
+                        <li>
+                            <a href="http://www.cresesb.cepel.br/index.php?section=sundata" target="_blank"
+                                class="text-dark text-decoration-none">Cresesb</a>
+                        </li>
+                    </ul>
                 </div>
-                  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">Links</h5>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
 
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="http://www.gsep.ene.unb.br/producao/marco/sbpe_2006.pdf" target="_blank" class="text-white text-decoration-none">Gsep</a>
-                    </li>
-                    <li>
-                      <a href="/quemsomos" class="text-white text-decoration-none">Quem somos</a>
-                    </li>
-                  </ul>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="http://www.gsep.ene.unb.br/producao/marco/sbpe_2006.pdf" target="_blank"
+                                class="text-dark text-decoration-none">Gsep</a>
+                        </li>
+                        <li>
+                            <a href="/quemsomos" class="text-dark text-decoration-none">Quem somos</a>
+                        </li>
+                    </ul>
                 </div>
-      </div>
-    </div>
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2021 Copyright: Solarits
-    </div>
-  </footer>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright: Solarits
+        </div>
+    </footer>
 </body>
 
 </html>
