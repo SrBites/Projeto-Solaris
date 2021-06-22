@@ -64,13 +64,13 @@
         </div>
 
         <div class="container">
-            <div class="jumbotron jumbotron-fluid p-5 mb-2" id="titulo">
+            <div class="jumbotron jumbotron-fluid p-5" id="titulo">
                 <h1 class="display-4 text-center">Formulário de alteração</h1>
             </div>
         </div>
         <div class="row mb-5">
             <div class="col-lg-7 mx-auto">
-                <div class="card mt-2 mx-auto p-4 bg-warning">
+                <div class="card mt-2 mx-auto p-4 bg-dark rounded mb-5">
                     <div class="card-body">
                         <div class="container">
                             <form id="contact-form" action="/alterarinformacoes" method="post">
@@ -79,7 +79,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="form_name" class="text-white">Nome</label>
-                                                <input id="form_name" value="{{ empresa[0] }}" name="name"
+                                                <input id="form_name" value="{{ empresa[0] }}" name="nome"
                                                     class="form-control" required="required">
                                             </div>
                                         </div>
@@ -88,14 +88,14 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="form_email" class="text-white">Url</label>
-                                                <input id="form_email" name="email" value="{{ empresa[2] }}"
+                                                <input id="form_email" name="url" value="{{ empresa[2] }}"
                                                     class="form-control" required="required">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="form_need" class="text-white">Mudar a região</label>
-                                                <select name="atuacao" id="atuacao" class="form-select" required>
+                                                <select name="regiao" id="atuacao" class="form-select" required>
                                                     <option selected>{{ empresa[1] }}</option>
                                                     <option>AC</option>>
                                                     <option>AL</option>>
@@ -130,12 +130,12 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="form_message" class="text-white">Descrição</label>
-                                                    <textarea id="form_message" name="message" class="form-control"
+                                                    <textarea id="form_message" name="descricao" class="form-control"
                                                         rows="4" required="required">{{ empresa[3] }}</textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-12 mt-3">
-                                                <input type="submit" class="btn btn-primary btn-send pt-2 btn-block "
+                                                <input type="submit" class="btn btn-outline-warning btn-send pt-2 btn-block"
                                                     value="Alterar">
                                             </div>
                                         </div>

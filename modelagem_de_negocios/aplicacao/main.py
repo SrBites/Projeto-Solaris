@@ -23,9 +23,12 @@ def index():
 
 @app.route('/index')
 def indexlogado():
-    if session['usuario_logado'] == None:
-        return redirect(url_for('index'))
-    return render_template('indexsession.html')
+    if session['usuario_logado'] != None:
+        return redirect(url_for('indexcliente'))
+    elif session['empresa_logada'] != None:
+        return render_template('indexempresa.html')
+
+    return redirect(url_for('index'))
 
 
 # ---FUNCIONALIDADES---
@@ -111,9 +114,9 @@ def loginCliente():
     if log_c.loga():
         session['usuario_logado'] = log_c.getDados('id')
         session['cep'] = int(log_c.getDados('cep'))
-        session['user'] = int(log_c.getDados('user'))
+        session['user'] = log_c.getDados('user')
         flash(f"Olá, {session['user']}! Login efetuado com sucesso!")
-        return render_template('indexsession.html')
+        return render_template('indexcliente.html')
 
     flash('Usuário ou senha incorretos, tente novamente')
     return redirect(url_for('formLogin'))
@@ -127,7 +130,7 @@ def loginEmpresa():
         session['empresa_logada'] = log_e.getDados('id')
         session['user'] = log_e.getDados('user')
         flash(f"Olá, {session['user']}! Login efetuado com sucesso!")
-        return render_template('indexsessionempresa.html')
+        return render_template('indexempresa.html')
 
     flash(f'Usuário ou senha incorretos, tente novamente')
     return redirect(url_for('formLogin'))
@@ -136,7 +139,7 @@ def loginEmpresa():
 # ---LOGOUT---
 @app.route('/logout')
 def logout():
-    if session['usuario_logado'] == None:
+    if session['usuario_logado'] == None or session['empresa_logada'] == None:
         flash('Atualmente você não se encontra em nenhuma sessão')
         return redirect(url_for('index'))
 
@@ -166,7 +169,7 @@ def alterardados():
         flash('Atualmente você não se encontra em nenhuma sessão')
         return redirect(url_for('index'))
     flash(msg)
-    return render_template('indexsessionempresa.html')
+    return render_template('indexempresa.html')
 
 
 app.run()
