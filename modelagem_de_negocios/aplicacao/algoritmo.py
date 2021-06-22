@@ -129,12 +129,29 @@ class Proposta:
 
         return [solar, estado]
 
-
-    def get_uma_empresa(self, nme):
-        nome_empresa = nme
+    def updateDados(self, idt):
+        nme = request.form['nome']
+        url = request.form['url']
+        regiao = request.form['regiao']
+        descricao = request.form['descricao']
         mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
-        cmd = 'SELECT nme_empresa, regiao_atuacao, url, descricao FROM tb_conta_empresa WHERE nme_empresa=%s'
-        cs = mysql.consultar(cmd, [nome_empresa])
+        cmd = '''UPDATE tb_conta_empresa SET nme_empresa=%s, regiao_atuacao=%s, url=%s, descricao=%s 
+                 WHERE id_conta_empresa=%s'''
+
+        cs = mysql.executar(cmd, [nme, regiao, url, descricao, idt])
+        msg = ''
+        if cs:
+            msg += f'Alteração da empresa {nme} concluída com sucesso'
+            return msg
+        msg += f'Alteração falhou'
+        return msg
+
+
+
+    def get_uma_empresa(self, idt):
+        mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
+        cmd = 'SELECT nme_empresa, regiao_atuacao, url, descricao FROM tb_conta_empresa WHERE id_conta_empresa=%s'
+        cs = mysql.consultar(cmd, [idt])
         informacoes = cs.fetchone()
         return informacoes
 
