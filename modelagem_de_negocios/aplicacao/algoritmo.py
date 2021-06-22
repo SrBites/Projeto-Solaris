@@ -5,7 +5,7 @@ import math
 class IndicieSolarimetrico:
     def getIndicie(self, sgl):
         sgl_estado = sgl
-        mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
+        mysql = bd.SQL('root', '', 'ce5tvx5kvm')
         cmd = 'SELECT * FROM tb_mapa_incidencia WHERE sgl_estado=%s'
         cs = mysql.consultar(cmd, [sgl_estado])
         estado = cs.fetchone()
@@ -134,7 +134,7 @@ class Proposta:
         url = request.form['url']
         regiao = request.form['regiao']
         descricao = request.form['descricao']
-        mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
+        mysql = bd.SQL('root', '', 'ce5tvx5kvm')
         cmd = '''UPDATE tb_conta_empresa SET nme_empresa=%s, regiao_atuacao=%s, url=%s, descricao=%s 
                  WHERE id_conta_empresa=%s'''
 
@@ -149,7 +149,7 @@ class Proposta:
 
 
     def get_uma_empresa(self, idt):
-        mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
+        mysql = bd.SQL('root', '', 'ce5tvx5kvm')
         cmd = 'SELECT nme_empresa, regiao_atuacao, url, descricao FROM tb_conta_empresa WHERE id_conta_empresa=%s'
         cs = mysql.consultar(cmd, [idt])
         informacoes = cs.fetchone()
@@ -158,7 +158,7 @@ class Proposta:
 
     def getEmpresas(self, sgl):
         sgl_estado = sgl
-        mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
+        mysql = bd.SQL('root', '', 'ce5tvx5kvm')
         cmd = 'SELECT nme_empresa, regiao_atuacao, url, descricao FROM tb_conta_empresa WHERE regiao_atuacao=%s'
         cs = mysql.consultar(cmd, [sgl_estado])
         html = ''

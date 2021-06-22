@@ -5,7 +5,7 @@ import re
 def tipoUsuario(usuario):
     usuario = usuario
 
-    mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
+    mysql = bd.SQL('root', '', 'ce5tvx5kvm')
     cmd = 'SELECT tipo_perfil FROM tb_conta_cliente WHERE nme_cliente=%s'
     cs = mysql.consultar(cmd, [usuario])
     tipocliente = cs.fetchone()
@@ -62,7 +62,7 @@ class ContaCliente:
         user = 'usuario_invalido'
         password = 'senha_invalida'
 
-        mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
+        mysql = bd.SQL('root', '', 'ce5tvx5kvm')
         cmd = 'INSERT INTO tb_conta_cliente(nme_cliente, senha_cliente, cep_cliente) VALUES (%s, %s, %s);'
 
         if validaUsuario(nme_cliente):
@@ -84,7 +84,7 @@ class ContaEmpresa:
         user = 'usuario_invalido'
         password = 'senha_invalida'
 
-        mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
+        mysql = bd.SQL('root', '', 'ce5tvx5kvm')
         cmd = 'INSERT INTO tb_conta_empresa(nme_empresa, senha_empresa, cnpj, regiao_atuacao, url) VALUES (%s, %s, %s, %s, %s);'
 
         if validaUsuario(nme_empresa):

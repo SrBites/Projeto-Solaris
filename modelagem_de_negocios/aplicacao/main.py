@@ -24,7 +24,7 @@ def index():
 @app.route('/index')
 def indexlogado():
     if session['usuario_logado'] != None:
-        return redirect(url_for('indexcliente'))
+        return render_template('indexcliente.html')
     elif session['empresa_logada'] != None:
         return render_template('indexempresa.html')
 

@@ -5,7 +5,7 @@ class LoginCliente:
     def loga(self):
         username = request.form['nme_cliente']
         password = request.form['senha']
-        mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
+        mysql = bd.SQL('root', '', 'ce5tvx5kvm')
 
         cmd = '''SELECT * FROM tb_conta_cliente
         WHERE nme_cliente=%s AND senha_cliente=%s;'''
@@ -21,7 +21,7 @@ class LoginCliente:
     def getDados(self, dado):
         username = request.form['nme_cliente']
         password = request.form['senha']
-        mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
+        mysql = bd.SQL('root', '', 'ce5tvx5kvm')
 
         cmd = '''SELECT * FROM tb_conta_cliente
         WHERE nme_cliente=%s AND senha_cliente=%s;'''
@@ -40,7 +40,7 @@ class LoginEmpresa:
     def loga(self):
         username = request.form['nme_empresa']
         password = request.form['senha']
-        mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
+        mysql = bd.SQL('root', '', 'ce5tvx5kvm')
 
         cmd = '''SELECT * FROM tb_conta_empresa
         WHERE nme_empresa=%s AND senha_empresa=%s;'''
@@ -56,7 +56,7 @@ class LoginEmpresa:
     def getDados(self, dado):
         username = request.form['nme_empresa']
         password = request.form['senha']
-        mysql = bd.SQL('Ce5tvx5KvM', 'xq09k27yty', 'Ce5tvx5KvM')
+        mysql = bd.SQL('root', '', 'ce5tvx5kvm')
 
         cmd = '''SELECT * FROM tb_conta_empresa
         WHERE nme_empresa=%s AND senha_empresa=%s;'''
