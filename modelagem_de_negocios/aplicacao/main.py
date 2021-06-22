@@ -17,7 +17,7 @@ app.secret_key = 'ventodonorte'
 
 @app.route('/')
 def index():
-    if session['usuario_logado'] != None:
+    if session['usuario_logado'] is not None:
         return render_template('indexsession.html')
 
     return render_template('index.html')
@@ -104,9 +104,10 @@ def loginCliente():
     log_c = login.LoginCliente()
 
     if log_c.loga():
-        session['usuario_logado'] = log_c.getDados('user')
+        session['usuario_logado'] = log_c.getDados('id')
         session['cep'] = int(log_c.getDados('cep'))
-        flash(f"Olá, {session['usuario_logado']}! Login efetuado com sucesso!")
+        session['user'] = int(log_c.getDados('user'))
+        flash(f"Olá, {session['user']}! Login efetuado com sucesso!")
         return render_template('indexsession.html')
 
     flash('Usuário ou senha incorretos, tente novamente')
@@ -118,8 +119,9 @@ def loginEmpresa():
     log_e = login.LoginEmpresa()
 
     if log_e.loga():
-        session['empresa_logada'] = log_e.getDados('user')
-        flash(f"Olá, {session['empresa_logada']}! Login efetuado com sucesso!")
+        session['empresa_logada'] = log_e.getDados('id')
+        session['user'] = log_e.getDados('user')
+        flash(f"Olá, {session['user']}! Login efetuado com sucesso!")
         return render_template('indexsessionempresa.html')
 
     flash(f'Usuário ou senha incorretos, tente novamente')
@@ -136,6 +138,7 @@ def logout():
     session['usuario_logado'] = None
     session['empresa_logada'] = None
     session['cep'] = None
+    session['user'] = None
     flash('Usuário deslogado, faça o login novamente para ter acesso a todas funcionalidades do site')
 
     return redirect(url_for('index'))
@@ -149,10 +152,16 @@ def alterar():
     empresa = proposta.get_uma_empresa(session['empresa_logada'])
     return render_template('alterar.html', empresa=empresa)
 
+
 @app.route('/alterarinformacoes', methods=['POST'])
 def alterardados():
-
-
+    proposta = algoritmo.Proposta()
+    msg = proposta.updateDados(session['empresa_logada'])
+    if session['empresa_logada'] == None:
+        flash('Atualmente você não se encontra em nenhuma sessão')
+        return redirect(url_for('index'))
+    flash(msg)
+    return render_template('indexsessionempresa.html')
 
 
 app.run()
