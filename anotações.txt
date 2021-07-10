@@ -1,2 +1,0 @@
-Possiveis features do site
-- Mudança de interface quando logado
