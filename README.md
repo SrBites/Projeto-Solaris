@@ -6,4 +6,3 @@ O Projeto Solaris trata-se de um protótipo de site voltado aos clientes e empre
 ## Pablo Henrique Segat - Desenvolvedor Full-Stack
 ## Diogo Bites - Desenvolvedor Full-Stack
 ## Artur Santana Mendanha - Desenvolvedor Front-End
-## Pedro Henrique Villas Boas - Desenvolvedor Front-End
